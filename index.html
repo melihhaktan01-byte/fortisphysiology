@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fortis Physiology • Exercise Physiology & Physiotherapy • Auburn NSW</title>
-<meta name="description" content="Fortis Physiology, Auburn NSW. Exercise physiology and physiotherapy under one roof. Musculoskeletal rehab, chronic disease management, return to sport. GP and specialist referrals welcome.">
+<title>Fortis Physiology • Physiotherapy & Exercise Physiology • Auburn NSW</title>
+<meta name="description" content="Physiotherapy and exercise physiology under one roof in Auburn NSW. Injury rehab, strength and conditioning, chronic disease management. Rated 5.0 on Google. By appointment.">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="canonical" href="https://fortisphysiology.com/">
 <meta name="theme-color" content="#EAE5DA">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fortis Physiology • Exercise Physiology & Physiotherapy • Auburn NSW">
-<meta property="og:description" content="Exercise physiology and physiotherapy under one roof in Auburn NSW. Injury rehab, strength and conditioning, chronic disease management. GP and specialist referrals welcome.">
+<meta property="og:title" content="Fortis Physiology • Physiotherapy & Exercise Physiology • Auburn NSW">
+<meta property="og:description" content="Physiotherapy and exercise physiology under one roof in Auburn NSW. Injury rehab, strength and conditioning, chronic disease management. Rated 5.0 on Google.">
 <meta property="og:url" content="https://fortisphysiology.com/">
 <meta property="og:image" content="https://fortisphysiology.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,12 +18,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Fortis Physiology",
-  "description": "Exercise physiology and physiotherapy clinic in Auburn NSW. Musculoskeletal rehab, strength and conditioning, chronic disease management, return to sport.",
+  "description": "Physiotherapy and exercise physiology clinic in Auburn NSW. Musculoskeletal rehab, strength and conditioning, chronic disease management, return to sport. By appointment only.",
   "url": "https://fortisphysiology.com",
   "email": "contact@fortisphysiology.com",
   "telephone": "+61434068216",
@@ -38,385 +39,27 @@
   "sameAs": ["https://instagram.com/fortisphysiology"]
 }
 </script>
-<style>
-  :root {
-    --bone: #EAE5DA;
-    --bone-deep: #DFD9CB;
-    --ink: #131518;
-    --ink-soft: #23262b;
-    --oxide: #B0361F;
-    --line: rgba(19, 21, 24, 0.16);
-    --line-light: rgba(234, 229, 218, 0.18);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bone);
-    color: var(--ink);
-    font-family: "Archivo", sans-serif;
-    font-weight: 400;
-    line-height: 1.55;
-    overflow-x: hidden;
-  }
-  ::selection { background: var(--oxide); color: var(--bone); }
-
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
-
-  .display {
-    font-variation-settings: "wdth" 118;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -0.005em;
-    line-height: 1.02;
-  }
-  .label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--oxide);
-  }
-
-  /* ---------- header ---------- */
-  header {
-    position: sticky; top: 0; z-index: 100;
-    background: var(--bone);
-    border-bottom: 1px solid var(--line);
-  }
-  header .wrap {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 14px; padding-bottom: 14px;
-  }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-  .brand img { height: 30px; width: auto; display: block; }
-  .brand span {
-    font-variation-settings: "wdth" 118;
-    font-weight: 800; text-transform: uppercase;
-    font-size: 0.95rem; letter-spacing: 0.05em;
-  }
-  header nav a {
-    color: var(--ink); text-decoration: none;
-    font-size: 0.76rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    margin-left: 26px;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  header nav a:hover { color: var(--oxide); border-color: var(--oxide); }
-
-  /* ---------- hero ---------- */
-  .hero {
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-    padding: clamp(48px, 9vh, 90px) 0 clamp(40px, 7vh, 70px);
-  }
-  .hero h1 {
-    font-size: clamp(2.4rem, 5.5vw, 4.4rem);
-    opacity: 0; animation: fade 0.7s ease 0.05s forwards;
-  }
-  .hero-sub {
-    max-width: 60ch;
-    margin: 20px auto 0;
-    font-size: 1.02rem; color: var(--ink-soft);
-    opacity: 0; animation: fade 0.7s ease 0.2s forwards;
-  }
-  .hero-sub strong { font-weight: 700; }
-  .chips {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 10px; margin-top: 28px; max-width: 760px;
-    opacity: 0; animation: fade 0.7s ease 0.35s forwards;
-  }
-  .chips span {
-    font-size: 0.76rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.1em;
-    border: 1px solid var(--ink);
-    padding: 9px 16px;
-  }
-  .hero-cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fade 0.7s ease 0.5s forwards; }
-  @keyframes fade { to { opacity: 1; } }
-
-  .btn {
-    display: inline-block;
-    background: var(--ink); color: var(--bone);
-    text-decoration: none;
-    font-size: 0.78rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    padding: 16px 30px;
-    transition: background 0.2s;
-  }
-  .btn:hover { background: var(--oxide); }
-  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
-  .btn.ghost:hover { background: var(--ink); color: var(--bone); }
-
-  /* ---------- marquee ---------- */
-  .marquee {
-    background: var(--oxide); color: var(--bone);
-    overflow: hidden; white-space: nowrap;
-    padding: 11px 0;
-    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
-  }
-  .marquee-track { display: inline-block; animation: scroll 28s linear infinite; }
-  .marquee-track span {
-    font-variation-settings: "wdth" 118;
-    font-weight: 800; text-transform: uppercase;
-    font-size: 0.92rem; letter-spacing: 0.08em;
-    padding-right: 18px;
-  }
-  @keyframes scroll { to { transform: translateX(-50%); } }
-
-  /* funding strip */
-  .funding {
-    background: var(--bone-deep);
-    border-bottom: 1px solid var(--line);
-    padding: 16px 0;
-  }
-  .funding .wrap {
-    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
-    gap: 10px 28px;
-  }
-  .funding span {
-    font-size: 0.74rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--ink-soft);
-    display: flex; align-items: center; gap: 9px;
-  }
-  .funding span::before { content: "✓"; color: var(--oxide); font-weight: 700; }
-
-  /* faq */
-  .faq-list { max-width: 820px; border-top: 1px solid var(--line); }
-  .faq-list details { border-bottom: 1px solid var(--line); }
-  .faq-list summary {
-    cursor: pointer; list-style: none;
-    display: flex; justify-content: space-between; align-items: center; gap: 16px;
-    padding: 19px 0;
-    font-weight: 700; font-size: 1.02rem;
-  }
-  .faq-list summary::-webkit-details-marker { display: none; }
-  .faq-list summary::after { content: "+"; color: var(--oxide); font-size: 1.3rem; font-weight: 400; flex-shrink: 0; }
-  .faq-list details[open] summary::after { content: "–"; }
-  .faq-list .a { padding: 0 0 20px; font-size: 0.96rem; color: var(--ink-soft); max-width: 68ch; }
-
-  /* ---------- sections ---------- */
-  section { padding: clamp(56px, 9vh, 100px) 0; }
-  .sec-head { margin-bottom: clamp(32px, 5vh, 52px); }
-  .sec-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.9rem); margin-top: 12px; }
-
-  .dark { background: var(--ink); color: var(--bone); }
-  .dark .sec-head h2 { color: var(--bone); }
-  .dark p { color: rgba(234, 229, 218, 0.78); }
-
-  /* team (centered, divider bars) */
-  #team .sec-head { text-align: center; }
-  .team-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1px; background: var(--line-light);
-    border-top: 1px solid var(--line-light);
-    border-bottom: 1px solid var(--line-light);
-  }
-  .team-card {
-    background: var(--ink);
-    padding: clamp(28px, 3.5vw, 48px) clamp(22px, 3vw, 44px);
-    text-align: center;
-  }
-  .team-card .role {
-    font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.2em;
-    color: #D4634E;
-  }
-  .team-card h3 {
-    font-variation-settings: "wdth" 118;
-    font-weight: 800; text-transform: uppercase;
-    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
-    line-height: 1.05; margin: 14px 0 6px;
-  }
-  .team-card .cred {
-    font-size: 0.92rem; color: rgba(234, 229, 218, 0.6);
-    margin-bottom: 16px;
-  }
-  .team-card p { font-size: 0.96rem; max-width: 46ch; margin: 0 auto 14px; }
-  .team-focus {
-    list-style: none; max-width: 380px; margin: 0 auto;
-    border-top: 1px solid var(--line-light);
-  }
-  .team-focus li {
-    padding: 9px 0; border-bottom: 1px solid var(--line-light);
-    font-size: 0.9rem; color: rgba(234, 229, 218, 0.85);
-  }
-
-  /* services */
-  .service-row {
-    display: grid;
-    grid-template-columns: 56px 1fr 1.2fr;
-    gap: clamp(14px, 2.5vw, 40px);
-    align-items: baseline;
-    padding: 24px 0;
-    border-top: 1px solid var(--line);
-  }
-  .service-row:last-child { border-bottom: 1px solid var(--line); }
-  .service-row .num { font-size: 0.85rem; font-weight: 600; color: var(--oxide); }
-  .service-row h3 {
-    font-variation-settings: "wdth" 118;
-    font-weight: 750; text-transform: uppercase;
-    font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.1;
-  }
-  .service-row p { font-size: 0.95rem; color: var(--ink-soft); max-width: 52ch; }
-
-  /* patients */
-  .patients { background: var(--bone-deep); }
-  .pat-grid {
-    display: grid; grid-template-columns: 1.15fr 1fr;
-    gap: clamp(32px, 5vw, 80px); align-items: start;
-  }
-  .pat-grid h2 { font-size: clamp(1.8rem, 3.2vw, 2.7rem); margin-top: 12px; }
-  .steps { list-style: none; margin-top: 24px; border-top: 1px solid var(--line); }
-  .steps li {
-    display: grid; grid-template-columns: 40px 1fr; gap: 12px;
-    padding: 16px 0; border-bottom: 1px solid var(--line);
-    align-items: baseline;
-  }
-  .steps .num { font-size: 0.85rem; font-weight: 600; color: var(--oxide); }
-  .steps h4 { font-size: 1rem; font-weight: 700; margin-bottom: 3px; }
-  .steps p { font-size: 0.93rem; color: var(--ink-soft); }
-  .who-list { list-style: none; border-top: 1px solid var(--line); margin-top: 10px; }
-  .who-list li {
-    padding: 15px 0; border-bottom: 1px solid var(--line);
-    font-weight: 600; font-size: 1rem;
-    display: flex; align-items: baseline; gap: 13px;
-  }
-  .who-list li::before { content: "→"; color: var(--oxide); font-weight: 400; }
-  .fees-note { margin-top: 24px; font-size: 0.93rem; color: var(--ink-soft); max-width: 46ch; }
-
-  /* reviews */
-  .reviews-head { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
-  .rating { font-size: 1rem; font-weight: 700; }
-  .rating .stars { color: var(--oxide); letter-spacing: 2px; }
-  .rating a { color: var(--ink-soft); font-weight: 400; font-size: 0.88rem; text-decoration: underline; }
-  .review-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 3vw, 40px); margin-top: clamp(28px, 4vh, 44px);
-  }
-  .review-grid blockquote {
-    border-top: 2px solid var(--oxide);
-    padding-top: 18px;
-    font-size: 0.96rem; color: var(--ink-soft);
-  }
-  .review-grid cite {
-    display: block; margin-top: 14px;
-    font-style: normal; font-weight: 700; font-size: 0.85rem; color: var(--ink);
-  }
-  .review-grid cite small { display: block; font-weight: 400; color: var(--ink-soft); }
-  @media (max-width: 760px) { .review-grid { grid-template-columns: 1fr; } }
-
-  /* referrals */
-  .ref-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: clamp(32px, 5vw, 80px); align-items: start;
-  }
-  .ref-list { list-style: none; border-top: 1px solid var(--line-light); margin: 10px 0 30px; }
-  .ref-list li {
-    padding: 13px 0; border-bottom: 1px solid var(--line-light);
-    display: flex; align-items: baseline; gap: 13px;
-    font-size: 0.98rem; font-weight: 600;
-  }
-  .ref-list li::before { content: "→"; color: #D4634E; font-weight: 400; }
-  .ref-list li small {
-    display: block; font-weight: 400; font-size: 0.87rem;
-    color: rgba(234, 229, 218, 0.6);
-  }
-  .ref-copy p { margin-bottom: 16px; font-size: 0.98rem; }
-  .ref-copy .label, .ref-col .label { margin-top: 22px; display: block; }
-  .ref-box {
-    border: 1px solid var(--line-light);
-    padding: clamp(22px, 3vw, 34px);
-    margin-top: 24px;
-  }
-  .ref-box h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--bone); }
-  .ref-box ul { list-style: none; }
-  .ref-box li {
-    padding: 7px 0; font-size: 0.93rem;
-    color: rgba(234, 229, 218, 0.78);
-    display: flex; gap: 10px; align-items: baseline;
-  }
-  .ref-box li::before { content: "•"; color: #D4634E; }
-  .ref-box ol { list-style: none; counter-reset: f; }
-  .ref-box ol li { counter-increment: f; }
-  .ref-box ol li::before { content: counter(f, decimal-leading-zero); color: #D4634E; font-size: 0.8rem; font-weight: 600; }
-  .ref-box .mail { margin-top: 14px; font-size: 0.98rem; }
-  .ref-box .mail a { color: #D4634E; }
-
-  /* contact (oxide) */
-  .contact { background: var(--oxide); color: var(--bone); }
-  .contact .label { color: var(--bone); opacity: 0.75; }
-  .contact h2 { font-size: clamp(2rem, 4.2vw, 3.6rem); margin: 12px 0 32px; color: var(--bone); }
-  .contact-lines { border-top: 1px solid rgba(234, 229, 218, 0.35); max-width: 720px; }
-  .contact-lines a {
-    display: flex; justify-content: space-between; align-items: center; gap: 20px;
-    padding: 19px 0; border-bottom: 1px solid rgba(234, 229, 218, 0.35);
-    color: var(--bone); text-decoration: none;
-    font-size: clamp(0.98rem, 1.8vw, 1.2rem); font-weight: 600;
-    transition: color 0.2s, padding-left 0.25s;
-  }
-  .contact-lines a span.k {
-    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.2em; color: rgba(234, 229, 218, 0.7);
-  }
-  .contact-lines a:hover { color: var(--ink); padding-left: 10px; }
-  .contact-note { margin-top: 22px; font-size: 0.93rem; color: #F3EFE6; max-width: 60ch; }
-
-  a:focus-visible, summary:focus-visible {
-    outline: 2px solid var(--oxide);
-    outline-offset: 3px;
-  }
-  .dark a:focus-visible, .contact a:focus-visible { outline-color: var(--bone); }
-
-  footer {
-    background: var(--ink); color: rgba(234, 229, 218, 0.55);
-    padding: 44px 0 30px;
-    font-size: 0.85rem;
-  }
-  .foot-grid {
-    display: grid; grid-template-columns: 1.2fr 1fr 1fr;
-    gap: clamp(28px, 4vw, 64px);
-    padding-bottom: 30px;
-    border-bottom: 1px solid var(--line-light);
-  }
-  .foot-grid .fb { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-  .foot-grid .fb img { height: 26px; width: auto; }
-  .foot-grid .fb span {
-    color: var(--bone);
-    font-variation-settings: "wdth" 118;
-    font-weight: 800; text-transform: uppercase;
-    font-size: 0.85rem; letter-spacing: 0.05em;
-  }
-  .foot-grid h5 {
-    color: var(--bone); font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.2em;
-    margin-bottom: 12px;
-  }
-  .foot-grid a { color: rgba(234, 229, 218, 0.75); text-decoration: none; display: block; padding: 3px 0; }
-  .foot-grid a:hover { color: #D4634E; }
-  .foot-grid p { max-width: 34ch; }
-  .foot-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; font-size: 0.76rem; }
-  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
-
-  /* reveal on scroll */
-  .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-  .js .reveal.in { opacity: 1; transform: none; }
-
-  @media (max-width: 760px) {
-    .team-grid, .pat-grid, .ref-grid { grid-template-columns: 1fr; }
-    .service-row { grid-template-columns: 40px 1fr; }
-    .service-row p { grid-column: 2; }
-    header nav a:not(:last-child) { display: none; }
-  }
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Do I need a referral to see a physio or exercise physiologist in Auburn?", "acceptedAnswer": {"@type": "Answer", "text": "No, private patients can book directly. You only need paperwork for funded care: a GP care plan for Medicare rebates, or insurer approval for a workers compensation or CTP claim."}},
+    {"@type": "Question", "name": "Can I just walk in?", "acceptedAnswer": {"@type": "Answer", "text": "No, Fortis Physiology is appointment only. Call or text 0434 068 216 with your name and what is going on, and we will reply with available times."}},
+    {"@type": "Question", "name": "Physiotherapist or exercise physiologist, which one do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A physiotherapist assesses, diagnoses and treats pain and injury. An exercise physiologist prescribes structured exercise to rebuild capacity, for rehab, chronic conditions and performance. If you are not sure, contact us and we will point you to the right clinician."}},
+    {"@type": "Question", "name": "What will it cost?", "acceptedAnswer": {"@type": "Answer", "text": "All fees are confirmed before your first appointment. Rebates may apply through a Medicare care plan, private health extras, DVA, CTP, or workers compensation. HICAPS is available for on-the-spot extras claims."}},
+    {"@type": "Question", "name": "I have a workers compensation claim. Can you help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We provide structured, documented rehabilitation for injured workers in Auburn and Western Sydney under NSW workers compensation, with a clear return-to-work focus."}},
+    {"@type": "Question", "name": "Do you speak Turkish?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, consultations are available in English and Turkish."}},
+    {"@type": "Question", "name": "Do you only work with athletes?", "acceptedAnswer": {"@type": "Answer", "text": "No. We work with everyday people in pain, injured workers, and people managing chronic conditions, as well as athletes and grapplers."}}
+  ]
+}
+</script>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top">
+    <a class="brand" href="/">
       <img src="assets/logo-small.png" alt="Fortis Physiology logo" width="60" height="30">
       <span>Fortis Physiology</span>
     </a>
@@ -424,7 +67,7 @@
       <a href="#team">Team</a>
       <a href="#services">Services</a>
       <a href="#patients">Patients</a>
-      <a href="#referrals">Referrers</a>
+      <a href="referrers.html">Referrers</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -434,8 +77,9 @@
 
   <div class="hero">
     <div class="wrap">
+      <p class="eyebrow">Physiotherapy &amp; Exercise Physiology</p>
       <h1 class="display">Strong bodies,<br>built properly.</h1>
-      <p class="hero-sub"><strong>Exercise physiology and physiotherapy under one roof in Auburn, NSW.</strong> Assessment, treatment and structured exercise rehab from accredited clinicians. GP, specialist and insurer referrals welcome.</p>
+      <p class="hero-sub"><strong>Assessment, treatment and structured exercise rehab under one roof in Auburn, NSW.</strong> Whatever brought you here, pain, injury, or a condition you are managing, you leave with a plan. By appointment only.</p>
       <div class="chips">
         <span>Injury Rehab</span>
         <span>Strength &amp; Conditioning</span>
@@ -446,29 +90,25 @@
       </div>
       <div class="hero-cta">
         <a class="btn" href="#contact">Book an appointment</a>
-        <a class="btn ghost" href="#referrals">Refer a patient</a>
+        <a class="btn ghost" href="#patients">What to expect</a>
       </div>
     </div>
   </div>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Exercise Physiology • Physiotherapy • Strength &amp; Conditioning • Injury Rehab • Return to Sport •&nbsp;</span><span>Exercise Physiology • Physiotherapy • Strength &amp; Conditioning • Injury Rehab • Return to Sport •&nbsp;</span>
+      <span>Physiotherapy • Exercise Physiology • Strength &amp; Conditioning • Injury Rehab • Return to Sport •&nbsp;</span><span>Physiotherapy • Exercise Physiology • Strength &amp; Conditioning • Injury Rehab • Return to Sport •&nbsp;</span>
     </div>
   </div>
 
   <div class="funding" aria-label="Funding options">
     <div class="wrap">
-      <span>ESSA-Accredited</span>
-      <span>AHPRA-Registered</span>
-      <span>English &amp; Turkish Spoken</span>
       <span>Medicare CDM Plans</span>
       <span>DVA</span>
       <span>Workers Compensation NSW</span>
       <span>CTP</span>
       <span>My Aged Care</span>
-      <span>Private Health Extras, HICAPS On the Spot</span>
-      <span>No Referral Needed for Private Patients</span>
+      <span>Private Health Covers</span>
     </div>
   </div>
 
@@ -480,20 +120,7 @@
       </div>
       <div class="team-grid reveal">
         <div class="team-card">
-          <span class="role">Accredited Exercise Physiologist</span>
-          <h3>Melih Haktan</h3>
-          <p class="cred">AEP, ESSA-accredited</p>
-          <p>Clinical exercise prescription across rehab, chronic disease and performance. Takes patients from assessment through to independent, confident training.</p>
-          <ul class="team-focus">
-            <li>Musculoskeletal &amp; post-injury rehab</li>
-            <li>Chronic disease &amp; type 2 diabetes</li>
-            <li>Strength &amp; conditioning, combat athletes</li>
-            <li>Work injury rehabilitation</li>
-          </ul>
-        </div>
-        <div class="team-card">
-          <span class="role">Physiotherapist</span>
-          <h3>Saif</h3>
+          <h3>Physiotherapist</h3>
           <p class="cred">AHPRA-registered</p>
           <p>Assessment, diagnosis and treatment of musculoskeletal pain and injury, with care planned around function and long-term outcomes, not just short-term relief.</p>
           <ul class="team-focus">
@@ -501,6 +128,17 @@
             <li>Acute &amp; persistent pain</li>
             <li>Manual therapy &amp; exercise-based treatment</li>
             <li>Return to sport &amp; work</li>
+          </ul>
+        </div>
+        <div class="team-card">
+          <h3>Exercise Physiologist</h3>
+          <p class="cred">AEP, ESSA-accredited</p>
+          <p>Clinical exercise prescription across rehab, chronic disease and performance. Takes you from assessment through to independent, confident training.</p>
+          <ul class="team-focus">
+            <li>Musculoskeletal &amp; post-injury rehab</li>
+            <li>Chronic disease &amp; type 2 diabetes</li>
+            <li>Strength &amp; conditioning, combat athletes</li>
+            <li>Work injury rehabilitation</li>
           </ul>
         </div>
       </div>
@@ -559,7 +197,7 @@
           <li><span class="num">03</span><div><h4>Plain-English explanation</h4><p>What is going on, what the plan is, and how long it should take.</p></div></li>
           <li><span class="num">04</span><div><h4>A plan you start immediately</h4><p>Treatment and exercise from day one, progressed each visit toward your goal.</p></div></li>
         </ol>
-        <p class="fees-note">Rebates may apply through Medicare care plans (ask your GP), private health extras, or workers compensation. We confirm all costs with you before your first appointment, no surprises.</p>
+        <p class="fees-note">Rebates may apply through Medicare care plans (ask your GP), private health extras, DVA, CTP, or workers compensation. We confirm all costs with you before your first appointment, no surprises.</p>
       </div>
       <div class="reveal">
         <span class="label">Who We Help</span>
@@ -606,70 +244,6 @@
     </div>
   </section>
 
-  <section class="dark" id="referrals">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="label">For Referrers</span>
-        <h2 class="display">Referring a patient is simple.</h2>
-      </div>
-      <div class="ref-grid reveal">
-        <div class="ref-col">
-          <p style="font-size:0.98rem;">We accept referrals from GPs, specialists and allied health for exercise physiology and physiotherapy. Every referred patient gets a structured initial assessment. You get a letter after that assessment, and a summary at discharge.</p>
-          <span class="label">What to refer</span>
-          <ul class="ref-list">
-            <li>Musculoskeletal injuries<small>Back, neck, shoulder, hip and knee, acute or persistent</small></li>
-            <li>Sports &amp; training injuries<small>Assessment, rehab and staged return to sport</small></li>
-            <li>Work-related injuries<small>Active claims, with return-to-work planning and reporting</small></li>
-            <li>Persistent pain &amp; deconditioning<small>Patients needing structured, supervised exercise rather than passive care</small></li>
-            <li>Chronic conditions where exercise is indicated<small>Including type 2 diabetes, cardiovascular and metabolic conditions</small></li>
-          </ul>
-          <span class="label">Funding we accept</span>
-          <ul class="ref-list">
-            <li>Medicare Chronic Disease Management plans<small>EP and physiotherapy under a GP-managed CDM plan</small></li>
-            <li>Workers compensation (NSW)<small>Documented rehab with return-to-work focus</small></li>
-            <li>DVA<small>Referred veterans' care</small></li>
-            <li>CTP<small>Motor accident injury claims</small></li>
-            <li>My Aged Care<small>Exercise-based care for older patients</small></li>
-            <li>Private health extras<small>HICAPS on the spot, where cover includes EP or physio</small></li>
-            <li>Private patients<small>No referral needed, patients can self-refer</small></li>
-          </ul>
-        </div>
-        <div class="ref-col">
-          <div class="ref-box">
-            <h4>How it works, start to finish</h4>
-            <ol>
-              <li>You send the referral, or the patient contacts us directly</li>
-              <li>We contact the patient and arrange the first appointment</li>
-              <li>Structured initial assessment with the treating clinician</li>
-              <li>You receive an assessment letter with the diagnosis and plan</li>
-              <li>Active block of care, then a discharge summary back to you</li>
-            </ol>
-          </div>
-          <div class="ref-box">
-            <h4>To refer, email us with:</h4>
-            <ul>
-              <li>Patient name, DOB and contact details</li>
-              <li>Presenting condition and relevant history</li>
-              <li>Any imaging or specialist reports</li>
-              <li>CDM plan paperwork, if applicable</li>
-              <li>Claim number and insurer details, for workers compensation</li>
-            </ul>
-            <p class="mail">Send to <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a><br>or call or text 0434 068 216.</p>
-          </div>
-          <div class="ref-box">
-            <h4>What you can expect from us</h4>
-            <ul>
-              <li>Correspondence after the initial assessment</li>
-              <li>Progress updates on request, and at discharge</li>
-              <li>Evidence-based, active care, exercise is the core of treatment, not an afterthought</li>
-              <li>A direct line to the treating clinician</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="faq">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -679,7 +253,11 @@
       <div class="faq-list reveal">
         <details>
           <summary>Do I need a referral?</summary>
-          <p class="a">No, private patients can book directly. You only need paperwork for funded care: a GP care plan for Medicare rebates, or insurer approval for a workers compensation claim.</p>
+          <p class="a">No, private patients can book directly. You only need paperwork for funded care: a GP care plan for Medicare rebates, or insurer approval for a workers compensation or CTP claim.</p>
+        </details>
+        <details>
+          <summary>Can I just walk in?</summary>
+          <p class="a">No, we are appointment only. Call or text 0434 068 216 with your name and what is going on, and we will reply with available times.</p>
         </details>
         <details>
           <summary>Physiotherapist or exercise physiologist, which one do I need?</summary>
@@ -688,6 +266,14 @@
         <details>
           <summary>What will it cost?</summary>
           <p class="a">We confirm all fees with you before your first appointment, no surprises. Rebates may apply through a Medicare care plan, private health extras, DVA, CTP, or workers compensation. We have HICAPS, so extras claims happen on the spot.</p>
+        </details>
+        <details>
+          <summary>I have a workers compensation claim. Can you help?</summary>
+          <p class="a">Yes. We provide structured, documented rehab for injured workers in Auburn and Western Sydney under NSW workers compensation, with progress reporting and a clear return-to-work focus.</p>
+        </details>
+        <details>
+          <summary>Do you speak Turkish?</summary>
+          <p class="a">Yes. Consultations are available in English and Turkish, evet, Türkçe konuşuyoruz.</p>
         </details>
         <details>
           <summary>Do you only work with athletes?</summary>
@@ -701,6 +287,13 @@
     </div>
   </section>
 
+  <div class="ref-band">
+    <div class="wrap">
+      <p><strong>Referring clinician?</strong> What to refer, funding, and how our process works, all on one page.</p>
+      <a class="btn ghost" href="referrers.html">For referrers</a>
+    </div>
+  </div>
+
   <section class="contact" id="contact">
     <div class="wrap">
       <span class="label">Contact</span>
@@ -711,7 +304,8 @@
         <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener"><span class="k">Instagram</span>@fortisphysiology</a>
         <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener"><span class="k">Location</span>10 Raglan Road, Auburn NSW</a>
       </div>
-      <p class="contact-note">To book, call or text with your name and what is going on, and we will reply with available times. Text or email gets the fastest reply, if we miss your call, send a message and we will get back to you. Consultations available in English and Turkish.</p>
+      <span class="appt-only">Appointment only, no walk-ins</span>
+      <p class="contact-note">To book, call or text with your name and what is going on, and we will reply with available times. Text or email gets the fastest reply. Consultations available in English and Turkish.</p>
     </div>
   </section>
 
@@ -725,17 +319,19 @@
           <img src="assets/logo-small.png" alt="">
           <span>Fortis Physiology</span>
         </div>
-        <p>Exercise physiology and physiotherapy under one roof. Accredited clinicians, evidence-based care, and a plan you can actually follow.</p>
+        <p>Physiotherapy and exercise physiology under one roof. Accredited clinicians, evidence-based care, and a plan you can actually follow.</p>
       </div>
       <div>
         <h5>Visit</h5>
         <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener">10 Raglan Road<br>Auburn NSW 2144</a>
+        <p style="margin-top:8px; font-size:0.8rem;">By appointment only</p>
       </div>
       <div>
         <h5>Contact</h5>
         <a href="tel:+61434068216">0434 068 216</a>
         <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a>
         <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener">@fortisphysiology</a>
+        <a href="referrers.html">For referrers</a>
       </div>
     </div>
     <div class="foot-base">
