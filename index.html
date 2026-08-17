@@ -350,11 +350,34 @@
   .dark a:focus-visible, .contact a:focus-visible { outline-color: var(--bone); }
 
   footer {
-    background: var(--ink); color: rgba(234, 229, 218, 0.45);
-    padding: 24px 0 30px;
-    font-size: 0.78rem;
+    background: var(--ink); color: rgba(234, 229, 218, 0.55);
+    padding: 44px 0 30px;
+    font-size: 0.85rem;
   }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .foot-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+    gap: clamp(28px, 4vw, 64px);
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line-light);
+  }
+  .foot-grid .fb { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .foot-grid .fb img { height: 26px; width: auto; }
+  .foot-grid .fb span {
+    color: var(--bone);
+    font-variation-settings: "wdth" 118;
+    font-weight: 800; text-transform: uppercase;
+    font-size: 0.85rem; letter-spacing: 0.05em;
+  }
+  .foot-grid h5 {
+    color: var(--bone); font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+  .foot-grid a { color: rgba(234, 229, 218, 0.75); text-decoration: none; display: block; padding: 3px 0; }
+  .foot-grid a:hover { color: #D4634E; }
+  .foot-grid p { max-width: 34ch; }
+  .foot-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; font-size: 0.76rem; }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
 
   /* reveal on scroll */
   .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -415,6 +438,8 @@
 
   <div class="funding" aria-label="Funding options">
     <div class="wrap">
+      <span>ESSA-Accredited</span>
+      <span>AHPRA-Registered</span>
       <span>Medicare CDM Plans</span>
       <span>Workers Compensation NSW</span>
       <span>Private Health Extras</span>
@@ -540,7 +565,7 @@
       </div>
       <div class="ref-grid reveal">
         <div class="ref-col">
-          <p style="font-size:0.98rem;">We accept referrals from GPs, specialists and allied health for exercise physiology and physiotherapy. Every referred patient receives a structured initial assessment and you receive correspondence after that assessment, then at discharge.</p>
+          <p style="font-size:0.98rem;">We accept referrals from GPs, specialists and allied health for exercise physiology and physiotherapy. Every referred patient gets a structured initial assessment. You get a letter after that assessment, and a summary at discharge.</p>
           <span class="label">What to refer</span>
           <ul class="ref-list">
             <li>Musculoskeletal injuries<small>Back, neck, shoulder, hip and knee, acute or persistent</small></li>
@@ -642,8 +667,29 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Fortis Physiology</span>
-    <span>Exercise Physiology &amp; Physiotherapy • Auburn, NSW</span>
+    <div class="foot-grid">
+      <div>
+        <div class="fb">
+          <img src="assets/logo-small.png" alt="">
+          <span>Fortis Physiology</span>
+        </div>
+        <p>Exercise physiology and physiotherapy under one roof. Accredited clinicians, evidence-based care, and a plan you can actually follow.</p>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener">10 Raglan Road<br>Auburn NSW 2144</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+61434068216">0434 068 216</a>
+        <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a>
+        <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener">@fortisphysiology</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Fortis Physiology</span>
+      <span>ESSA-Accredited Exercise Physiology • AHPRA-Registered Physiotherapy</span>
+    </div>
   </div>
 </footer>
 
