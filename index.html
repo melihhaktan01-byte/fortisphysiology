@@ -287,6 +287,27 @@
   .who-list li::before { content: "→"; color: var(--oxide); font-weight: 400; }
   .fees-note { margin-top: 24px; font-size: 0.93rem; color: var(--ink-soft); max-width: 46ch; }
 
+  /* reviews */
+  .reviews-head { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+  .rating { font-size: 1rem; font-weight: 700; }
+  .rating .stars { color: var(--oxide); letter-spacing: 2px; }
+  .rating a { color: var(--ink-soft); font-weight: 400; font-size: 0.88rem; text-decoration: underline; }
+  .review-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 40px); margin-top: clamp(28px, 4vh, 44px);
+  }
+  .review-grid blockquote {
+    border-top: 2px solid var(--oxide);
+    padding-top: 18px;
+    font-size: 0.96rem; color: var(--ink-soft);
+  }
+  .review-grid cite {
+    display: block; margin-top: 14px;
+    font-style: normal; font-weight: 700; font-size: 0.85rem; color: var(--ink);
+  }
+  .review-grid cite small { display: block; font-weight: 400; color: var(--ink-soft); }
+  @media (max-width: 760px) { .review-grid { grid-template-columns: 1fr; } }
+
   /* referrals */
   .ref-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -440,9 +461,13 @@
     <div class="wrap">
       <span>ESSA-Accredited</span>
       <span>AHPRA-Registered</span>
+      <span>English &amp; Turkish Spoken</span>
       <span>Medicare CDM Plans</span>
+      <span>DVA</span>
       <span>Workers Compensation NSW</span>
-      <span>Private Health Extras</span>
+      <span>CTP</span>
+      <span>My Aged Care</span>
+      <span>Private Health Extras, HICAPS On the Spot</span>
       <span>No Referral Needed for Private Patients</span>
     </div>
   </div>
@@ -557,6 +582,30 @@
     </div>
   </section>
 
+  <section id="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Reviews</span>
+        <h2 class="display">Rated 5.0 on Google.</h2>
+        <p class="rating" style="margin-top:14px;"><span class="stars">★★★★★</span> 5.0 from 10 reviews · <a href="https://www.google.com/maps/search/Fortis+Physiology+Auburn+NSW" target="_blank" rel="noopener">Read them on Google</a></p>
+      </div>
+      <div class="review-grid reveal">
+        <blockquote>
+          "When I had broken my neck, I had no movement in my neck, and nerve damage. After doing real physio workouts to strengthen and build my neck I had full mobility and I'm back to having best sleeps ever."
+          <cite>Hank<small>Google review</small></cite>
+        </blockquote>
+        <blockquote>
+          "Melih is very knowledgeable and friendly, making me feel comfortable right away. He got straight to the point and came up with an effective plan to help me work on my injury. Highly recommend!"
+          <cite>Jonas<small>Google review</small></cite>
+        </blockquote>
+        <blockquote>
+          "Fortis Physiology truly sets the gold standard in recovery and rehabilitation!"
+          <cite>Jamal<small>Google review</small></cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
   <section class="dark" id="referrals">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -578,7 +627,10 @@
           <ul class="ref-list">
             <li>Medicare Chronic Disease Management plans<small>EP and physiotherapy under a GP-managed CDM plan</small></li>
             <li>Workers compensation (NSW)<small>Documented rehab with return-to-work focus</small></li>
-            <li>Private health extras<small>Where the patient's cover includes EP or physio</small></li>
+            <li>DVA<small>Referred veterans' care</small></li>
+            <li>CTP<small>Motor accident injury claims</small></li>
+            <li>My Aged Care<small>Exercise-based care for older patients</small></li>
+            <li>Private health extras<small>HICAPS on the spot, where cover includes EP or physio</small></li>
             <li>Private patients<small>No referral needed, patients can self-refer</small></li>
           </ul>
         </div>
@@ -635,7 +687,7 @@
         </details>
         <details>
           <summary>What will it cost?</summary>
-          <p class="a">We confirm all fees with you before your first appointment, no surprises. Rebates may apply through a Medicare care plan, private health extras, or workers compensation.</p>
+          <p class="a">We confirm all fees with you before your first appointment, no surprises. Rebates may apply through a Medicare care plan, private health extras, DVA, CTP, or workers compensation. We have HICAPS, so extras claims happen on the spot.</p>
         </details>
         <details>
           <summary>Do you only work with athletes?</summary>
@@ -659,7 +711,7 @@
         <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener"><span class="k">Instagram</span>@fortisphysiology</a>
         <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener"><span class="k">Location</span>10 Raglan Road, Auburn NSW</a>
       </div>
-      <p class="contact-note">To book, call or text with your name and what is going on, and we will reply with available times. Text or email gets the fastest reply, if we miss your call, send a message and we will get back to you.</p>
+      <p class="contact-note">To book, call or text with your name and what is going on, and we will reply with available times. Text or email gets the fastest reply, if we miss your call, send a message and we will get back to you. Consultations available in English and Turkish.</p>
     </div>
   </section>
 
