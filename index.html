@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortis Physiology — Exercise Physiology & Physiotherapy</title>
+<meta name="description" content="Fortis Physiology. Exercise physiology and physiotherapy under one roof. Injury rehab, strength and conditioning, and return to sport, built on evidence.">
+<link rel="icon" type="image/png" href="assets/fortis-torso.png">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #EAE5DA;
+    --bone-deep: #DFD9CB;
+    --ink: #131518;
+    --ink-soft: #23262b;
+    --oxide: #B0361F;
+    --oxide-bright: #C7402A;
+    --line: rgba(19, 21, 24, 0.16);
+    --line-light: rgba(234, 229, 218, 0.18);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: "Archivo", sans-serif;
+    font-variation-settings: "wdth" 100;
+    font-weight: 400;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--oxide); color: var(--bone); }
+
+  /* grain overlay */
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+
+  .display {
+    font-family: "Archivo", sans-serif;
+    font-variation-settings: "wdth" 125;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.92;
+  }
+  .serif-accent {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--oxide);
+  }
+
+  /* ---------- header ---------- */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    mix-blend-mode: difference; color: #fff;
+  }
+  header .wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 22px; padding-bottom: 22px;
+  }
+  .wordmark {
+    font-variation-settings: "wdth" 125;
+    font-weight: 850; text-transform: uppercase;
+    font-size: 1rem; letter-spacing: 0.06em;
+    color: #fff; text-decoration: none;
+  }
+  header nav a {
+    color: #fff; text-decoration: none;
+    font-size: 0.78rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin-left: 28px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  header nav a:hover { border-color: #fff; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-bottom: clamp(40px, 7vh, 90px);
+    position: relative;
+  }
+  .hero-rule {
+    position: absolute; top: 0; bottom: 0; right: clamp(20px, 22vw, 320px);
+    width: 1px; background: var(--line);
+  }
+  .hero-mark {
+    position: absolute;
+    top: 34vh;
+    right: clamp(16px, 3vw, 48px);
+    width: clamp(190px, 19vw, 330px);
+    z-index: 0;
+    opacity: 0;
+    animation: fade 1s ease 0.4s forwards;
+    filter: drop-shadow(0 18px 40px rgba(19, 21, 24, 0.25));
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: clamp(3.2rem, 11.5vw, 10.5rem);
+    margin-top: 14vh;
+  }
+  .hero h1 .row { display: block; overflow: hidden; }
+  .hero h1 .row > span {
+    display: block;
+    transform: translateY(110%);
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero h1 .row:nth-child(2) > span { animation-delay: 0.12s; }
+  .hero h1 .row:nth-child(3) > span { animation-delay: 0.24s; }
+  .hero h1 .indent { padding-left: clamp(30px, 12vw, 220px); }
+  .hero h1 .serif-accent { font-size: 0.92em; font-weight: 400; }
+  @keyframes rise { to { transform: translateY(0); } }
+
+  .hero-foot {
+    display: flex; flex-wrap: wrap; gap: 32px;
+    justify-content: space-between; align-items: flex-end;
+    margin-top: clamp(36px, 6vh, 72px);
+    opacity: 0; animation: fade 0.8s ease 0.55s forwards;
+  }
+  @keyframes fade { to { opacity: 1; } }
+  .hero-foot p { max-width: 44ch; font-size: 1.02rem; color: var(--ink-soft); }
+  .hero-foot p strong { font-weight: 700; }
+
+  .btn {
+    display: inline-block;
+    background: var(--ink); color: var(--bone);
+    text-decoration: none;
+    font-size: 0.8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 18px 34px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn:hover { background: var(--oxide); transform: translateY(-2px); }
+  .btn.on-dark { background: var(--bone); color: var(--ink); }
+  .btn.on-dark:hover { background: var(--oxide); color: var(--bone); }
+
+  /* ---------- marquee ---------- */
+  .marquee {
+    background: var(--oxide); color: var(--bone);
+    overflow: hidden; white-space: nowrap;
+    padding: 14px 0;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: scroll 28s linear infinite;
+  }
+  .marquee-track span {
+    font-variation-settings: "wdth" 125;
+    font-weight: 850; text-transform: uppercase;
+    font-size: 1.05rem; letter-spacing: 0.08em;
+    padding-right: 18px;
+  }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* ---------- sections ---------- */
+  section { padding: clamp(72px, 12vh, 140px) 0; }
+  .sec-head { margin-bottom: clamp(40px, 7vh, 72px); }
+  .sec-head h2 { font-size: clamp(2.4rem, 5.5vw, 4.6rem); margin-top: 14px; }
+
+  .dark { background: var(--ink); color: var(--bone); }
+  .dark .sec-head h2 { color: var(--bone); }
+  .dark p { color: rgba(234, 229, 218, 0.78); }
+
+  /* team */
+  .team-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--line-light);
+    border-top: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line-light);
+  }
+  .team-card { background: var(--ink); padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 48px); }
+  .team-card .role {
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.22em;
+    color: #D4634E;
+  }
+  .team-card h3 {
+    font-variation-settings: "wdth" 125;
+    font-weight: 850; text-transform: uppercase;
+    font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+    line-height: 1; margin: 16px 0 6px;
+  }
+  .team-card .cred {
+    font-family: "Newsreader", serif; font-style: italic;
+    font-size: 1.05rem; color: rgba(234, 229, 218, 0.6);
+    margin-bottom: 20px;
+  }
+  .team-card p { font-size: 0.98rem; max-width: 46ch; }
+
+  /* services */
+  .service-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1.2fr;
+    gap: clamp(16px, 3vw, 48px);
+    align-items: baseline;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+  }
+  .service-row:last-child { border-bottom: 1px solid var(--line); }
+  .service-row .num {
+    font-family: "Newsreader", serif; font-style: italic;
+    font-size: 1.1rem; color: var(--oxide);
+  }
+  .service-row h3 {
+    font-variation-settings: "wdth" 125;
+    font-weight: 800; text-transform: uppercase;
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem); line-height: 1.05;
+  }
+  .service-row p { font-size: 0.98rem; color: var(--ink-soft); max-width: 52ch; }
+
+  /* who */
+  .who { background: var(--bone-deep); }
+  .who-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: clamp(40px, 6vw, 100px); align-items: start;
+  }
+  .who-grid h2 { font-size: clamp(2.2rem, 4.8vw, 4rem); margin-top: 14px; }
+  .who-list { list-style: none; border-top: 1px solid var(--line); margin-top: 10px; }
+  .who-list li {
+    padding: 18px 0; border-bottom: 1px solid var(--line);
+    font-weight: 600; font-size: 1.05rem;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .who-list li::before { content: "→"; color: var(--oxide); font-weight: 400; }
+
+  /* contact */
+  .contact { text-align: left; }
+  .contact h2 { font-size: clamp(2.6rem, 7vw, 6.5rem); margin: 14px 0 40px; }
+  .contact h2 .serif-accent { font-size: 0.9em; }
+  .contact-lines { border-top: 1px solid var(--line-light); max-width: 720px; }
+  .contact-lines a {
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    padding: 22px 0; border-bottom: 1px solid var(--line-light);
+    color: var(--bone); text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.35rem); font-weight: 600;
+    transition: color 0.2s, padding-left 0.25s;
+  }
+  .contact-lines a span.k {
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.22em; color: rgba(234, 229, 218, 0.5);
+  }
+  .contact-lines a:hover { color: #D4634E; padding-left: 10px; }
+
+  footer {
+    background: var(--ink); color: rgba(234, 229, 218, 0.45);
+    padding: 28px 0 34px;
+    border-top: 1px solid var(--line-light);
+    font-size: 0.78rem;
+  }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  /* reveal on scroll */
+  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 760px) {
+    .hero-mark { width: 52vw; top: 84px; right: 12px; }
+    .team-grid, .who-grid { grid-template-columns: 1fr; }
+    .service-row { grid-template-columns: 44px 1fr; }
+    .service-row p { grid-column: 2; }
+    header nav a:not(:last-child) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#top">Fortis Physiology</a>
+    <nav>
+      <a href="#team">Team</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="hero-rule"></div>
+    <img class="hero-mark" src="assets/fortis-torso.png" alt="Fortis Physiology emblem">
+    <div class="wrap">
+      <h1 class="display">
+        <span class="row"><span>Strong bodies,</span></span>
+        <span class="row indent"><span>built <em class="serif-accent">properly.</em></span></span>
+      </h1>
+      <div class="hero-foot">
+        <p><strong>Exercise physiology and physiotherapy under one roof.</strong> Injury rehab, strength and conditioning, and return to sport, delivered by accredited clinicians and grounded in evidence, not trends.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Exercise Physiology — Physiotherapy — Strength &amp; Conditioning — Injury Rehab — Return to Sport —&nbsp;</span><span>Exercise Physiology — Physiotherapy — Strength &amp; Conditioning — Injury Rehab — Return to Sport —&nbsp;</span>
+    </div>
+  </div>
+
+  <section class="dark" id="team">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">01 / The Team</span>
+        <h2 class="display">Two disciplines.<br>One standard.</h2>
+      </div>
+      <div class="team-grid reveal">
+        <div class="team-card">
+          <span class="role">Accredited Exercise Physiologist</span>
+          <h3>Melih Haktan</h3>
+          <p class="cred">AEP, ESSA-accredited</p>
+          <p>Clinical exercise prescription for injury, chronic conditions and performance. Programs the bridge between rehab and real training, so you finish stronger than before you were hurt.</p>
+        </div>
+        <div class="team-card">
+          <span class="role">Physiotherapist</span>
+          <h3>[Physio Name]</h3>
+          <p class="cred">AHPRA-registered</p>
+          <p>Assessment, diagnosis and hands-on treatment of pain and injury. From the first consult, care is planned with the end goal in sight: full function, not just symptom relief.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">02 / What We Do</span>
+        <h2 class="display">From first consult<br>to <em class="serif-accent">full capacity.</em></h2>
+      </div>
+      <div class="reveal">
+        <div class="service-row">
+          <span class="num">01</span>
+          <h3>Injury Assessment &amp; Rehab</h3>
+          <p>Physiotherapy assessment and structured rehab plans for acute and lingering injuries, built to restore function, not just settle symptoms.</p>
+        </div>
+        <div class="service-row">
+          <span class="num">02</span>
+          <h3>Strength &amp; Conditioning</h3>
+          <p>Individualised, evidence-based programming from an accredited exercise physiologist, with a specialty in grapplers and combat athletes.</p>
+        </div>
+        <div class="service-row">
+          <span class="num">03</span>
+          <h3>Return to Sport</h3>
+          <p>Staged progressions that take you from cleared-on-paper to genuinely ready, with objective criteria at every step.</p>
+        </div>
+        <div class="service-row">
+          <span class="num">04</span>
+          <h3>Chronic Condition Management</h3>
+          <p>Clinical exercise prescription for persistent pain and long-term conditions, delivered safely and progressed deliberately.</p>
+        </div>
+        <div class="service-row">
+          <span class="num">05</span>
+          <h3>Work Injury Rehabilitation</h3>
+          <p>Structured, documented programs supporting recovery and safe return to work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who">
+    <div class="wrap who-grid">
+      <div class="reveal">
+        <span class="label">03 / Who We Help</span>
+        <h2 class="display">Built for people who want their body <em class="serif-accent">back.</em></h2>
+      </div>
+      <ul class="who-list reveal">
+        <li>Grapplers &amp; combat athletes</li>
+        <li>Athletes returning from injury</li>
+        <li>People in pain who want a plan, not a printout</li>
+        <li>Workers recovering from injury</li>
+        <li>Anyone starting strength training the right way</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dark contact" id="contact">
+    <div class="wrap">
+      <span class="label">04 / Contact</span>
+      <h2 class="display reveal">Let's get you <em class="serif-accent">moving.</em></h2>
+      <div class="contact-lines reveal">
+        <a href="tel:+61000000000"><span class="k">Phone</span>[EDIT: phone number]</a>
+        <a href="mailto:hello@fortisphysiology.com"><span class="k">Email</span>[EDIT: email address]</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener"><span class="k">Instagram</span>[EDIT: @handle]</a>
+        <a href="#"><span class="k">Location</span>[EDIT: suburb / clinic address]</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Fortis Physiology</span>
+    <span>Exercise Physiology &amp; Physiotherapy</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
