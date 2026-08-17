@@ -9,7 +9,7 @@
 <script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bone: #EAE5DA;
@@ -17,7 +17,6 @@
     --ink: #131518;
     --ink-soft: #23262b;
     --oxide: #B0361F;
-    --oxide-bright: #C7402A;
     --line: rgba(19, 21, 24, 0.16);
     --line-light: rgba(234, 229, 218, 0.18);
   }
@@ -27,45 +26,26 @@
     background: var(--bone);
     color: var(--ink);
     font-family: "Archivo", sans-serif;
-    font-variation-settings: "wdth" 100;
     font-weight: 400;
     line-height: 1.55;
     overflow-x: hidden;
   }
   ::selection { background: var(--oxide); color: var(--bone); }
 
-  /* grain overlay */
-  body::after {
-    content: "";
-    position: fixed; inset: 0;
-    pointer-events: none;
-    z-index: 999;
-    opacity: 0.5;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  }
-
-  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
 
   .display {
-    font-family: "Archivo", sans-serif;
-    font-variation-settings: "wdth" 125;
-    font-weight: 850;
+    font-variation-settings: "wdth" 118;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
-    line-height: 0.92;
-  }
-  .serif-accent {
-    font-family: "Newsreader", serif;
-    font-style: italic;
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: 0;
+    letter-spacing: -0.005em;
+    line-height: 1.02;
   }
   .label {
     font-size: 0.72rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     color: var(--oxide);
   }
 
@@ -78,103 +58,102 @@
 
   /* ---------- header ---------- */
   header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    mix-blend-mode: difference; color: #fff;
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bone);
+    border-bottom: 1px solid var(--line);
   }
   header .wrap {
     display: flex; justify-content: space-between; align-items: center;
-    padding-top: 22px; padding-bottom: 22px;
+    padding-top: 14px; padding-bottom: 14px;
   }
-  .wordmark {
-    font-variation-settings: "wdth" 125;
-    font-weight: 850; text-transform: uppercase;
-    font-size: 1rem; letter-spacing: 0.06em;
-    color: #fff; text-decoration: none;
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .brand img { height: 30px; width: auto; display: block; }
+  .brand span {
+    font-variation-settings: "wdth" 118;
+    font-weight: 800; text-transform: uppercase;
+    font-size: 0.95rem; letter-spacing: 0.05em;
   }
   header nav a {
-    color: #fff; text-decoration: none;
-    font-size: 0.78rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    margin-left: 28px;
+    color: var(--ink); text-decoration: none;
+    font-size: 0.76rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-left: 26px;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, color 0.2s;
   }
-  header nav a:hover { border-color: #fff; }
+  header nav a:hover { color: var(--oxide); border-color: var(--oxide); }
 
-  /* ---------- hero (centered) ---------- */
+  /* ---------- hero ---------- */
   .hero {
-    min-height: 100svh;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     text-align: center;
-    padding: 110px 0 clamp(48px, 8vh, 90px);
+    padding: clamp(48px, 9vh, 90px) 0 clamp(40px, 7vh, 70px);
   }
-  .hero-mark {
-    width: clamp(230px, 26vw, 380px);
-    margin-bottom: clamp(20px, 3.5vh, 40px);
-    opacity: 0;
-    animation: fade 1s ease 0.1s forwards;
-    filter: drop-shadow(0 18px 40px rgba(19, 21, 24, 0.22));
-    pointer-events: none;
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+    opacity: 0; animation: fade 0.7s ease 0.05s forwards;
   }
-  .hero h1 { font-size: clamp(3rem, 9.5vw, 8.5rem); }
-  .hero h1 .row { display: block; overflow: hidden; }
-  .hero h1 .row > span {
-    display: block;
-    transform: translateY(110%);
-    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
-  }
-  .hero h1 .row:nth-child(2) > span { animation-delay: 0.27s; }
-  .hero h1 .serif-accent { font-size: 0.92em; font-weight: 400; }
-  @keyframes rise { to { transform: translateY(0); } }
-
   .hero-sub {
-    max-width: 56ch;
-    margin: clamp(24px, 4vh, 40px) auto 0;
-    font-size: 1.05rem; color: var(--ink-soft);
-    opacity: 0; animation: fade 0.8s ease 0.6s forwards;
+    max-width: 58ch;
+    margin: 20px auto 0;
+    font-size: 1.02rem; color: var(--ink-soft);
+    opacity: 0; animation: fade 0.7s ease 0.2s forwards;
   }
   .hero-sub strong { font-weight: 700; }
-  .hero .btn { margin-top: clamp(24px, 4vh, 40px); opacity: 0; animation: fade 0.8s ease 0.75s forwards; }
+  .chips {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 10px; margin-top: 28px; max-width: 760px;
+    opacity: 0; animation: fade 0.7s ease 0.35s forwards;
+  }
+  .chips span {
+    font-size: 0.76rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    border: 1px solid var(--ink);
+    padding: 9px 16px;
+  }
+  .hero-cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fade 0.7s ease 0.5s forwards; }
   @keyframes fade { to { opacity: 1; } }
 
   .btn {
     display: inline-block;
     background: var(--ink); color: var(--bone);
     text-decoration: none;
-    font-size: 0.8rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.16em;
-    padding: 18px 34px;
-    transition: background 0.2s, transform 0.2s;
+    font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    padding: 16px 30px;
+    transition: background 0.2s;
   }
-  .btn:hover { background: var(--oxide); transform: translateY(-2px); }
+  .btn:hover { background: var(--oxide); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--bone); }
 
   /* ---------- marquee ---------- */
   .marquee {
     background: var(--oxide); color: var(--bone);
     overflow: hidden; white-space: nowrap;
-    padding: 14px 0;
+    padding: 11px 0;
     border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
   }
   .marquee-track { display: inline-block; animation: scroll 28s linear infinite; }
   .marquee-track span {
-    font-variation-settings: "wdth" 125;
-    font-weight: 850; text-transform: uppercase;
-    font-size: 1.05rem; letter-spacing: 0.08em;
+    font-variation-settings: "wdth" 118;
+    font-weight: 800; text-transform: uppercase;
+    font-size: 0.92rem; letter-spacing: 0.08em;
     padding-right: 18px;
   }
   @keyframes scroll { to { transform: translateX(-50%); } }
 
   /* ---------- sections ---------- */
-  section { padding: clamp(72px, 12vh, 140px) 0; }
-  .sec-head { margin-bottom: clamp(40px, 7vh, 72px); }
-  .sec-head h2 { font-size: clamp(2.4rem, 5.5vw, 4.6rem); margin-top: 14px; }
+  section { padding: clamp(56px, 9vh, 100px) 0; }
+  .sec-head { margin-bottom: clamp(32px, 5vh, 52px); }
+  .sec-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.9rem); margin-top: 12px; }
 
   .dark { background: var(--ink); color: var(--bone); }
   .dark .sec-head h2 { color: var(--bone); }
   .dark p { color: rgba(234, 229, 218, 0.78); }
 
-  /* team (centered, keep divider bars) */
+  /* team (centered, divider bars) */
   #team .sec-head { text-align: center; }
   .team-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -184,126 +163,122 @@
   }
   .team-card {
     background: var(--ink);
-    padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 48px);
+    padding: clamp(28px, 3.5vw, 48px) clamp(22px, 3vw, 44px);
     text-align: center;
   }
   .team-card .role {
     font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.22em;
+    text-transform: uppercase; letter-spacing: 0.2em;
     color: #D4634E;
   }
   .team-card h3 {
-    font-variation-settings: "wdth" 125;
-    font-weight: 850; text-transform: uppercase;
-    font-size: clamp(1.6rem, 2.6vw, 2.3rem);
-    line-height: 1; margin: 16px 0 6px;
+    font-variation-settings: "wdth" 118;
+    font-weight: 800; text-transform: uppercase;
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    line-height: 1.05; margin: 14px 0 6px;
   }
   .team-card .cred {
-    font-family: "Newsreader", serif; font-style: italic;
-    font-size: 1.05rem; color: rgba(234, 229, 218, 0.6);
-    margin-bottom: 20px;
+    font-size: 0.92rem; color: rgba(234, 229, 218, 0.6);
+    margin-bottom: 16px;
   }
-  .team-card p { font-size: 0.98rem; max-width: 46ch; margin: 0 auto; }
+  .team-card p { font-size: 0.96rem; max-width: 46ch; margin: 0 auto; }
 
   /* services */
   .split-head {
     display: grid; grid-template-columns: 1.4fr 1fr;
-    gap: clamp(32px, 5vw, 80px); align-items: end;
-    margin-bottom: clamp(40px, 7vh, 72px);
+    gap: clamp(28px, 4vw, 64px); align-items: end;
+    margin-bottom: clamp(32px, 5vh, 52px);
   }
+  .split-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.9rem); margin-top: 12px; }
   .split-head .photo { aspect-ratio: 4 / 3; }
   .service-row {
     display: grid;
-    grid-template-columns: 80px 1fr 1.2fr;
-    gap: clamp(16px, 3vw, 48px);
+    grid-template-columns: 56px 1fr 1.2fr;
+    gap: clamp(14px, 2.5vw, 40px);
     align-items: baseline;
-    padding: 30px 0;
+    padding: 24px 0;
     border-top: 1px solid var(--line);
   }
   .service-row:last-child { border-bottom: 1px solid var(--line); }
-  .service-row .num {
-    font-family: "Newsreader", serif; font-style: italic;
-    font-size: 1.1rem; color: var(--oxide);
-  }
+  .service-row .num { font-size: 0.85rem; font-weight: 600; color: var(--oxide); }
   .service-row h3 {
-    font-variation-settings: "wdth" 125;
-    font-weight: 800; text-transform: uppercase;
-    font-size: clamp(1.25rem, 2.2vw, 1.8rem); line-height: 1.05;
+    font-variation-settings: "wdth" 118;
+    font-weight: 750; text-transform: uppercase;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem); line-height: 1.1;
   }
-  .service-row p { font-size: 0.98rem; color: var(--ink-soft); max-width: 52ch; }
+  .service-row p { font-size: 0.95rem; color: var(--ink-soft); max-width: 52ch; }
 
   /* who */
   .who { background: var(--bone-deep); }
   .who-grid {
     display: grid; grid-template-columns: 1.1fr 1fr;
-    gap: clamp(40px, 6vw, 100px); align-items: start;
+    gap: clamp(32px, 5vw, 80px); align-items: start;
   }
-  .who-grid h2 { font-size: clamp(2.2rem, 4.8vw, 4rem); margin-top: 14px; }
-  .who-grid .photo { aspect-ratio: 4 / 3; margin-top: clamp(28px, 4vh, 44px); }
+  .who-grid h2 { font-size: clamp(1.8rem, 3.2vw, 2.7rem); margin-top: 12px; }
+  .who-grid .photo { aspect-ratio: 4 / 3; margin-top: clamp(22px, 3.5vh, 36px); }
   .who-list { list-style: none; border-top: 1px solid var(--line); margin-top: 10px; }
   .who-list li {
-    padding: 18px 0; border-bottom: 1px solid var(--line);
-    font-weight: 600; font-size: 1.05rem;
-    display: flex; align-items: baseline; gap: 14px;
+    padding: 15px 0; border-bottom: 1px solid var(--line);
+    font-weight: 600; font-size: 1rem;
+    display: flex; align-items: baseline; gap: 13px;
   }
   .who-list li::before { content: "→"; color: var(--oxide); font-weight: 400; }
 
   /* referrals */
   .ref-grid {
-    display: grid; grid-template-columns: 1fr 1.25fr;
-    gap: clamp(40px, 6vw, 100px); align-items: start;
+    display: grid; grid-template-columns: 1fr 1.3fr;
+    gap: clamp(32px, 5vw, 80px); align-items: start;
   }
   .ref-grid .photo { aspect-ratio: 4 / 5; border-color: var(--line-light); position: sticky; top: 90px; }
-  .ref-list { list-style: none; border-top: 1px solid var(--line-light); margin: 10px 0 34px; }
+  .ref-list { list-style: none; border-top: 1px solid var(--line-light); margin: 10px 0 30px; }
   .ref-list li {
-    padding: 16px 0; border-bottom: 1px solid var(--line-light);
-    display: flex; align-items: baseline; gap: 14px;
-    font-size: 1.02rem; font-weight: 600;
+    padding: 13px 0; border-bottom: 1px solid var(--line-light);
+    display: flex; align-items: baseline; gap: 13px;
+    font-size: 0.98rem; font-weight: 600;
   }
   .ref-list li::before { content: "→"; color: #D4634E; font-weight: 400; }
   .ref-list li small {
-    display: block; font-weight: 400; font-size: 0.9rem;
+    display: block; font-weight: 400; font-size: 0.87rem;
     color: rgba(234, 229, 218, 0.6);
   }
-  .ref-copy p { margin-bottom: 18px; font-size: 1.02rem; }
-  .ref-copy .label { margin-top: 26px; display: block; }
+  .ref-copy p { margin-bottom: 16px; font-size: 0.98rem; }
+  .ref-copy .label { margin-top: 22px; display: block; }
 
   /* contact (oxide) */
   .contact { background: var(--oxide); color: var(--bone); }
   .contact .label { color: var(--bone); opacity: 0.75; }
-  .contact h2 { font-size: clamp(2.6rem, 7vw, 6.5rem); margin: 14px 0 40px; color: var(--bone); }
-  .contact h2 .serif-accent { font-size: 0.9em; }
-  .contact-lines { border-top: 1px solid rgba(234, 229, 218, 0.35); max-width: 760px; }
+  .contact h2 { font-size: clamp(2rem, 4.2vw, 3.6rem); margin: 12px 0 32px; color: var(--bone); }
+  .contact-lines { border-top: 1px solid rgba(234, 229, 218, 0.35); max-width: 720px; }
   .contact-lines a {
     display: flex; justify-content: space-between; align-items: center; gap: 20px;
-    padding: 22px 0; border-bottom: 1px solid rgba(234, 229, 218, 0.35);
+    padding: 19px 0; border-bottom: 1px solid rgba(234, 229, 218, 0.35);
     color: var(--bone); text-decoration: none;
-    font-size: clamp(1rem, 2vw, 1.35rem); font-weight: 600;
+    font-size: clamp(0.98rem, 1.8vw, 1.2rem); font-weight: 600;
     transition: color 0.2s, padding-left 0.25s;
   }
   .contact-lines a span.k {
     font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.22em; color: rgba(234, 229, 218, 0.7);
+    letter-spacing: 0.2em; color: rgba(234, 229, 218, 0.7);
   }
   .contact-lines a:hover { color: var(--ink); padding-left: 10px; }
-  .contact-note { margin-top: 26px; font-size: 0.95rem; color: rgba(234, 229, 218, 0.85); max-width: 60ch; }
+  .contact-note { margin-top: 22px; font-size: 0.93rem; color: rgba(234, 229, 218, 0.85); max-width: 60ch; }
 
   footer {
     background: var(--ink); color: rgba(234, 229, 218, 0.45);
-    padding: 28px 0 34px;
+    padding: 24px 0 30px;
     font-size: 0.78rem;
   }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
   /* reveal on scroll */
-  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
   .js .reveal.in { opacity: 1; transform: none; }
 
   @media (max-width: 760px) {
     .team-grid, .who-grid, .split-head, .ref-grid { grid-template-columns: 1fr; }
     .split-head .photo { order: 2; }
     .ref-grid .photo { position: static; aspect-ratio: 4 / 3; }
-    .service-row { grid-template-columns: 44px 1fr; }
+    .service-row { grid-template-columns: 40px 1fr; }
     .service-row p { grid-column: 2; }
     header nav a:not(:last-child) { display: none; }
   }
@@ -313,7 +288,10 @@
 
 <header>
   <div class="wrap">
-    <a class="wordmark" href="#top">Fortis Physiology</a>
+    <a class="brand" href="#top">
+      <img src="assets/fortis-torso.png" alt="Fortis Physiology logo">
+      <span>Fortis Physiology</span>
+    </a>
     <nav>
       <a href="#team">Team</a>
       <a href="#services">Services</a>
@@ -327,13 +305,20 @@
 
   <div class="hero">
     <div class="wrap">
-      <img class="hero-mark" src="assets/fortis-torso.png" alt="Fortis Physiology emblem">
-      <h1 class="display">
-        <span class="row"><span>Strong bodies,</span></span>
-        <span class="row"><span>built <em class="serif-accent">properly.</em></span></span>
-      </h1>
-      <p class="hero-sub"><strong>Exercise physiology and physiotherapy under one roof in Auburn, NSW.</strong> Injury rehab, strength and conditioning, and return to sport, delivered by accredited clinicians and grounded in evidence, not trends.</p>
-      <a class="btn" href="#contact">Get in touch</a>
+      <h1 class="display">Strong bodies,<br>built properly.</h1>
+      <p class="hero-sub"><strong>Exercise physiology and physiotherapy under one roof in Auburn, NSW.</strong> Delivered by accredited clinicians and grounded in evidence, not trends.</p>
+      <div class="chips">
+        <span>Injury Rehab</span>
+        <span>Strength &amp; Conditioning</span>
+        <span>Return to Sport</span>
+        <span>Chronic Disease Management</span>
+        <span>Type 2 Diabetes</span>
+        <span>Work Injury Rehab</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#referrals">Refer a patient</a>
+      </div>
     </div>
   </div>
 
@@ -346,8 +331,8 @@
   <section class="dark" id="team">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="label">01 / The Team</span>
-        <h2 class="display">Two disciplines.<br>One standard.</h2>
+        <span class="label">The Team</span>
+        <h2 class="display">Two disciplines. One standard.</h2>
       </div>
       <div class="team-grid reveal">
         <div class="team-card">
@@ -370,8 +355,8 @@
     <div class="wrap">
       <div class="split-head reveal">
         <div>
-          <span class="label">02 / What We Do</span>
-          <h2 class="display" style="font-size: clamp(2.4rem, 5.5vw, 4.6rem); margin-top: 14px;">From first consult to <em class="serif-accent">full capacity.</em></h2>
+          <span class="label">What We Do</span>
+          <h2 class="display">From first consult to full capacity.</h2>
         </div>
         <img class="photo" src="assets/photo-physio.jpg" alt="Physiotherapist guiding a patient through an upper limb assessment">
       </div>
@@ -393,11 +378,16 @@
         </div>
         <div class="service-row">
           <span class="num">04</span>
-          <h3>Chronic Condition Management</h3>
-          <p>Clinical exercise prescription for persistent pain and long-term conditions, delivered safely and progressed deliberately.</p>
+          <h3>Chronic Disease Management</h3>
+          <p>Clinical exercise prescription for cardiovascular, metabolic and other long-term conditions, delivered safely and progressed deliberately.</p>
         </div>
         <div class="service-row">
           <span class="num">05</span>
+          <h3>Type 2 Diabetes Management</h3>
+          <p>Structured exercise programs to support glycaemic control and daily function, working alongside your GP's care plan.</p>
+        </div>
+        <div class="service-row">
+          <span class="num">06</span>
           <h3>Work Injury Rehabilitation</h3>
           <p>Structured, documented programs supporting recovery and safe return to work.</p>
         </div>
@@ -408,14 +398,15 @@
   <section class="who">
     <div class="wrap who-grid">
       <div class="reveal">
-        <span class="label">03 / Who We Help</span>
-        <h2 class="display">Built for people who want their body <em class="serif-accent">back.</em></h2>
+        <span class="label">Who We Help</span>
+        <h2 class="display">Built for people who want their body back.</h2>
         <img class="photo" src="assets/photo-bjj.jpg" alt="Grappler tying his belt before training">
       </div>
       <ul class="who-list reveal">
         <li>Grapplers &amp; combat athletes</li>
         <li>Athletes returning from injury</li>
         <li>People in pain who want a plan, not a printout</li>
+        <li>People managing chronic conditions</li>
         <li>Workers recovering from injury</li>
         <li>Anyone starting strength training the right way</li>
       </ul>
@@ -425,8 +416,8 @@
   <section class="dark" id="referrals">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="label">04 / For Referrers</span>
-        <h2 class="display">Referring a patient<br>is <em class="serif-accent">simple.</em></h2>
+        <span class="label">For Referrers</span>
+        <h2 class="display">Referring a patient is simple.</h2>
       </div>
       <div class="ref-grid reveal">
         <img class="photo" src="assets/photo-strength.jpg" alt="Supervised barbell training in the gym">
@@ -438,7 +429,7 @@
             <li>Sports &amp; training injuries<small>Assessment, rehab and staged return to sport</small></li>
             <li>Work-related injuries<small>Musculoskeletal injuries under an active claim, with return-to-work planning</small></li>
             <li>Persistent pain &amp; deconditioning<small>Patients who need structured, supervised exercise rather than passive care</small></li>
-            <li>Chronic conditions where exercise is indicated<small>Clinical exercise prescription with an accredited exercise physiologist</small></li>
+            <li>Chronic conditions where exercise is indicated<small>Including type 2 diabetes, with an accredited exercise physiologist</small></li>
           </ul>
           <span class="label">We accept</span>
           <ul class="ref-list">
@@ -456,8 +447,8 @@
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <span class="label">05 / Contact</span>
-      <h2 class="display reveal">Let's get you <em class="serif-accent">moving.</em></h2>
+      <span class="label">Contact</span>
+      <h2 class="display reveal">Let's get you moving.</h2>
       <div class="contact-lines reveal">
         <a href="sms:+61434068216"><span class="k">Call or Text</span>0434 068 216</a>
         <a href="mailto:contact@fortisphysiology.com"><span class="k">Email</span>contact@fortisphysiology.com</a>
