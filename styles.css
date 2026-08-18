@@ -184,6 +184,12 @@ section { padding: clamp(56px, 9vh, 100px) 0; }
 .dark p { color: rgba(234, 229, 218, 0.78); }
 
 /* team (centered, divider bars) */
+#team {
+  position: relative;
+  background-image: linear-gradient(rgba(19, 21, 24, 0.45), rgba(19, 21, 24, 0.45)), url("assets/team-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
 #team .sec-head, #services .sec-head { text-align: center; }
 .team-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -192,7 +198,7 @@ section { padding: clamp(56px, 9vh, 100px) 0; }
   border-bottom: 1px solid var(--line-light);
 }
 .team-card {
-  background: var(--ink);
+  background: rgba(19, 21, 24, 0.55);
   padding: clamp(28px, 3.5vw, 48px) clamp(22px, 3vw, 44px);
   text-align: center;
 }
