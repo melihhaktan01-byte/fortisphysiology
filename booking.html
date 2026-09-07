@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book an Appointment • Fortis Physiology • Auburn NSW</title>
-<meta name="description" content="Book a physiotherapy or exercise physiology appointment at Fortis Physiology, Auburn NSW. By appointment only, no walk-ins. Text or email to book.">
+<meta name="description" content="Book a physiotherapy or exercise physiology appointment at Fortis Physiology, Auburn NSW. Send a booking request online and we reply with available times.">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="canonical" href="https://fortisphysiology.com/booking.html">
 <meta name="theme-color" content="#EAE5DA">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Book an Appointment • Fortis Physiology • Auburn NSW">
-<meta property="og:description" content="By appointment only. Text or email with your name and what is going on, and we will reply with available times.">
+<meta property="og:description" content="By appointment only. Send a booking request with your name and what is going on, and we will reply with available times.">
 <meta property="og:url" content="https://fortisphysiology.com/booking.html">
 <meta property="og:image" content="https://fortisphysiology.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -28,11 +28,11 @@
       <span>Fortis Physiology</span>
     </a>
     <nav>
-      <a href="/#team">Team</a>
-      <a href="/#services">Services</a>
+      <a href="/#team">Services</a>
       <a href="/#patients">Patients</a>
       <a href="referrers.html">Referrers</a>
       <a href="/#contact">Contact</a>
+      <a class="nav-phone" href="tel:+61424309389">0424 309 389</a>
     </nav>
   </div>
 </header>
@@ -43,28 +43,64 @@
     <div class="wrap">
       <p class="eyebrow">Booking</p>
       <h1 class="display" style="font-size: clamp(2.2rem, 4.8vw, 3.8rem);">Book an appointment.</h1>
-      <p class="hero-sub"><strong>Fortis Physiology is appointment only. No walk-ins.</strong> Every session is scheduled so your clinician's time is fully yours, book first, then come in.</p>
+      <p class="hero-sub"><strong>Fortis Physiology is appointment only. No walk-ins.</strong> Send a booking request below and we will reply with available times, usually the same day.</p>
     </div>
   </div>
 
   <section class="patients" style="padding-top: clamp(40px, 6vh, 64px);">
+    <div class="wrap" style="max-width: 820px; text-align: center;">
+      <span class="label">Booking Request</span>
+
+      <div class="form-sent" id="form-sent" hidden>
+        Request sent. We will reply with available times, usually the same day. If it is urgent, call or text 0424 309 389.
+      </div>
+
+      <form class="book-form" id="book-form" action="https://formsubmit.co/contact@fortisphysiology.com" method="POST">
+        <input type="hidden" name="_subject" value="New booking request — fortisphysiology.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://fortisphysiology.com/booking.html?sent=1">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <label>Full name
+          <input type="text" name="Name" required autocomplete="name">
+        </label>
+        <label>Phone
+          <input type="tel" name="Phone" required autocomplete="tel">
+        </label>
+        <label>Email
+          <input type="email" name="Email" autocomplete="email">
+        </label>
+        <label>What is going on?
+          <textarea name="What is going on" required placeholder="An injury, a condition, or a goal, a sentence or two is plenty."></textarea>
+        </label>
+        <label>Preferred days or times
+          <input type="text" name="Preferred times" placeholder="e.g. weekday mornings, Saturday">
+        </label>
+        <button class="btn" type="submit">Send booking request</button>
+      </form>
+
+      <p class="form-note" style="margin-left:auto; margin-right:auto;">We review every request personally and reply with available times. Wear comfortable clothes you can move in to your appointment.</p>
+      <p class="fees-note center">All fees are confirmed with you before your first appointment. Rebates may apply through Medicare care plans, private health extras, DVA, CTP, or workers compensation.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: clamp(40px, 6vh, 64px);">
     <div class="wrap" style="max-width: 820px;">
-      <span class="label">How to book</span>
+      <span class="label">How it works</span>
       <ol class="steps">
-        <li><span class="num">01</span><div><h4>Text or email us</h4><p>Send your name and a sentence on what is going on, an injury, a condition, or a goal.</p></div></li>
-        <li><span class="num">02</span><div><h4>We reply with times</h4><p>You will get available appointment times and anything you need to know before coming in.</p></div></li>
-        <li><span class="num">03</span><div><h4>Locked in</h4><p>Confirm a time and you are booked. Bring comfortable clothes, any referral or care plan paperwork, and scans if you have them.</p></div></li>
+        <li><span class="num">1</span><div><h4>Send your request</h4><p>Use the form above, or text us your name and a sentence on what is going on.</p></div></li>
+        <li><span class="num">2</span><div><h4>We reply with times</h4><p>You will get available appointment times and anything you need to know before coming in.</p></div></li>
+        <li><span class="num">3</span><div><h4>Locked in</h4><p>Confirm a time and you are booked. Bring any referral or care plan paperwork, and scans if you have them.</p></div></li>
       </ol>
-      <p class="fees-note">All fees are confirmed with you before your first appointment. Rebates may apply through Medicare care plans, private health extras, DVA, CTP, or workers compensation.</p>
     </div>
   </section>
 
   <section class="contact">
     <div class="wrap">
-      <span class="label">Book Now</span>
-      <h2 class="display reveal">Send us a message.</h2>
+      <span class="label">Prefer to talk?</span>
+      <h2 class="display reveal">Call, text or email.</h2>
       <div class="contact-lines reveal">
-        <a href="sms:+61434068216"><span class="k">Text</span>0434 068 216</a>
+        <a href="sms:+61424309389"><span class="k">Call or Text</span>0424 309 389</a>
         <a href="mailto:contact@fortisphysiology.com"><span class="k">Email</span>contact@fortisphysiology.com</a>
         <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener"><span class="k">Location</span>10 Raglan Road, Auburn NSW</a>
       </div>
@@ -92,7 +128,7 @@
       </div>
       <div>
         <h5>Contact</h5>
-        <a href="tel:+61434068216">0434 068 216</a>
+        <a href="tel:+61424309389">0424 309 389</a>
         <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a>
         <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener">@fortisphysiology</a>
         <a href="/">Home</a>
@@ -104,6 +140,13 @@
     </div>
   </div>
 </footer>
+
+<script>
+  if (new URLSearchParams(location.search).get("sent") === "1") {
+    document.getElementById("form-sent").hidden = false;
+    document.getElementById("book-form").hidden = true;
+  }
+</script>
 
 </body>
 </html>

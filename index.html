@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,7 +26,7 @@
   "description": "Physiotherapy and exercise physiology clinic in Auburn NSW. Musculoskeletal rehab, strength and conditioning, chronic disease management, return to sport. By appointment only.",
   "url": "https://fortisphysiology.com",
   "email": "contact@fortisphysiology.com",
-  "telephone": "+61434068216",
+  "telephone": "+61424309389",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "10 Raglan Road",
@@ -44,12 +44,12 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "Do I need a referral to see a physio or exercise physiologist in Auburn?", "acceptedAnswer": {"@type": "Answer", "text": "No, private patients can book directly. You only need paperwork for funded care: a GP care plan for Medicare rebates, or insurer approval for a workers compensation or CTP claim."}},
-    {"@type": "Question", "name": "Can I just walk in?", "acceptedAnswer": {"@type": "Answer", "text": "No, Fortis Physiology is appointment only. Call or text 0434 068 216 with your name and what is going on, and we will reply with available times."}},
+    {"@type": "Question", "name": "Can I just walk in?", "acceptedAnswer": {"@type": "Answer", "text": "No, Fortis Physiology is appointment only. Book online, or call or text 0424 309 389 with your name and what is going on, and we will reply with available times."}},
     {"@type": "Question", "name": "Physiotherapist or exercise physiologist, which one do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A physiotherapist assesses, diagnoses and treats pain and injury. An exercise physiologist prescribes structured exercise to rebuild capacity, for rehab, chronic conditions and performance. If you are not sure, contact us and we will point you to the right clinician."}},
     {"@type": "Question", "name": "What will it cost?", "acceptedAnswer": {"@type": "Answer", "text": "All fees are confirmed before your first appointment. Rebates may apply through a Medicare care plan, private health extras, DVA, CTP, or workers compensation. HICAPS is available for on-the-spot extras claims."}},
     {"@type": "Question", "name": "I have a workers compensation claim. Can you help?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We provide structured, documented rehabilitation for injured workers in Auburn and Western Sydney under NSW workers compensation, with a clear return-to-work focus."}},
     {"@type": "Question", "name": "Do you speak Turkish?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, consultations are available in English and Turkish."}},
-    {"@type": "Question", "name": "Do you only work with athletes?", "acceptedAnswer": {"@type": "Answer", "text": "No. We work with everyday people in pain, injured workers, and people managing chronic conditions, as well as athletes and grapplers."}}
+    {"@type": "Question", "name": "Do you only work with athletes?", "acceptedAnswer": {"@type": "Answer", "text": "No. We work with everyday people in pain, injured workers, older adults, and people managing chronic conditions, as well as athletes and grapplers."}}
   ]
 }
 </script>
@@ -63,12 +63,12 @@
       <span>Fortis Physiology</span>
     </a>
     <nav>
-      <a href="#team">Team</a>
-      <a href="#services">Services</a>
+      <a href="#team">Services</a>
       <a href="#patients">Patients</a>
       <a href="referrers.html">Referrers</a>
       <a href="booking.html">Book</a>
       <a href="#contact">Contact</a>
+      <a class="nav-phone" href="tel:+61424309389">0424 309 389</a>
     </nav>
   </div>
 </header>
@@ -92,6 +92,7 @@
         <a class="btn" href="booking.html">Book an appointment</a>
         <a class="btn ghost" href="#patients">What to expect</a>
       </div>
+      <p class="hero-loc"><a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener">10 Raglan Road, Auburn NSW 2144</a> &nbsp;·&nbsp; <a href="tel:+61424309389">0424 309 389</a></p>
     </div>
   </div>
 
@@ -115,14 +116,13 @@
   <section class="dark" id="team">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="label">The Team</span>
-        <h2 class="display">Two disciplines. One standard.</h2>
+        <span class="label">Services</span>
       </div>
       <div class="team-grid reveal">
         <div class="team-card">
-          <h3>Physiotherapist</h3>
-          <p class="cred">AHPRA-registered</p>
-          <p>Assessment, diagnosis and treatment of musculoskeletal pain and injury, with care planned around function and long-term outcomes, not just short-term relief.</p>
+          <h3>Physiotherapy</h3>
+          <p class="cred">AHPRA-registered physiotherapist</p>
+          <p>Assessment, diagnosis and treatment of musculoskeletal pain and injury, planned around function and long-term outcomes.</p>
           <ul class="team-focus">
             <li>Assessment &amp; diagnosis</li>
             <li>Acute &amp; persistent pain</li>
@@ -132,13 +132,13 @@
           </ul>
         </div>
         <div class="team-card">
-          <h3>Exercise Physiologist</h3>
-          <p class="cred">AEP, ESSA-accredited</p>
-          <p>Clinical exercise prescription across rehab, chronic disease and performance. Takes you from assessment through to independent, confident training.</p>
+          <h3>Exercise Physiology</h3>
+          <p class="cred">ESSA-accredited exercise physiologist (AEP)</p>
+          <p>Clinical exercise prescription for rehab, chronic disease and performance, from first assessment to independent training.</p>
           <ul class="team-focus">
             <li>Musculoskeletal &amp; post-injury rehab</li>
             <li>Chronic disease &amp; type 2 diabetes</li>
-            <li>Strength &amp; conditioning, 7 years of coaching</li>
+            <li>Strength &amp; conditioning</li>
             <li>Work injury rehabilitation</li>
             <li>Return to sport &amp; performance</li>
           </ul>
@@ -155,35 +155,50 @@
       </div>
       <div class="reveal">
         <div class="service-row" id="injury-rehab">
-          <span class="num">01</span>
+          <span class="num">1</span>
           <h3>Injury Assessment &amp; Rehab</h3>
           <p>Physiotherapy assessment, diagnosis and a staged rehab plan for back, neck, shoulder, hip and knee injuries, with clear milestones so you know you are progressing. Rehab here is active from day one, you train your way back, we guide the load.</p>
         </div>
         <div class="service-row" id="strength-conditioning">
-          <span class="num">02</span>
+          <span class="num">2</span>
           <h3>Strength &amp; Conditioning</h3>
           <p>Individualised programming from an accredited exercise physiologist with seven years of strength and conditioning experience: technique, load management and progression, from first-time lifters to athletes and combat sports.</p>
         </div>
         <div class="service-row" id="return-to-sport">
-          <span class="num">03</span>
+          <span class="num">3</span>
           <h3>Return to Sport</h3>
           <p>Criteria-based progressions that close the gap between "cleared" and genuinely ready: strength benchmarks, capacity testing, then sport-specific loading. You go back when the numbers say you are ready, not just the calendar.</p>
         </div>
         <div class="service-row" id="chronic-disease">
-          <span class="num">04</span>
+          <span class="num">4</span>
           <h3>Chronic Disease Management</h3>
           <p>Supervised clinical exercise for cardiovascular, metabolic and musculoskeletal conditions, dosed to the person and their comorbidities. Structured, safe, and progressed at your pace.</p>
         </div>
         <div class="service-row" id="type-2-diabetes">
-          <span class="num">05</span>
+          <span class="num">5</span>
           <h3>Type 2 Diabetes Management</h3>
           <p>Structured exercise to support glycaemic control, strength and daily function, coordinated with your GP's care plan. Exercise is one of the most powerful tools for managing type 2 diabetes, prescribed properly, it works.</p>
         </div>
         <div class="service-row" id="work-injury">
-          <span class="num">06</span>
+          <span class="num">6</span>
           <h3>Work Injury Rehabilitation</h3>
           <p>Documented, goal-based rehab for injured workers with progress reporting and a clear return-to-work focus. Both our physiotherapist and exercise physiologist manage work injuries end to end.</p>
         </div>
+      </div>
+      <div class="treat reveal" id="conditions">
+        <span class="label">Conditions We Treat</span>
+        <ul class="treat-list">
+          <li>Low back &amp; neck pain</li>
+          <li>Shoulder, hip &amp; knee injuries</li>
+          <li>Tendinopathy &amp; overuse injuries</li>
+          <li>Osteoarthritis &amp; joint pain</li>
+          <li>Post-surgical rehabilitation</li>
+          <li>Type 2 diabetes</li>
+          <li>Cardiovascular &amp; metabolic conditions</li>
+          <li>Balance, falls risk &amp; deconditioning</li>
+          <li>Work injuries</li>
+          <li>Sports &amp; combat sports injuries</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -194,31 +209,32 @@
         <span class="label">For Patients</span>
         <h2 class="display">Your first visit, step by step.</h2>
         <ol class="steps">
-          <li><span class="num">01</span><div><h4>We listen first</h4><p>Your history, your symptoms, and what you actually want to get back to.</p></div></li>
-          <li><span class="num">02</span><div><h4>Full assessment</h4><p>Movement, strength and function tested properly, not a two-minute glance.</p></div></li>
-          <li><span class="num">03</span><div><h4>A clear guide</h4><p>Exactly what is going on and exactly what to do about it, explained in a way that makes sense.</p></div></li>
-          <li><span class="num">04</span><div><h4>A plan you start immediately</h4><p>Treatment and exercise from day one, progressed each visit toward your goal.</p></div></li>
+          <li><span class="num">1</span><div><h4>We listen first</h4><p>Your history, your symptoms, and what you actually want to get back to.</p></div></li>
+          <li><span class="num">2</span><div><h4>Full assessment</h4><p>Movement, strength and function tested properly, not a two-minute glance.</p></div></li>
+          <li><span class="num">3</span><div><h4>A clear guide</h4><p>Exactly what is going on and exactly what to do about it, explained in a way that makes sense.</p></div></li>
+          <li><span class="num">4</span><div><h4>A plan you start immediately</h4><p>Treatment and exercise from day one, progressed each visit toward your goal.</p></div></li>
         </ol>
-        <p class="fees-note">Rebates may apply through Medicare care plans (ask your GP), private health extras, DVA, CTP, or workers compensation. We confirm all costs with you before your first appointment, no surprises.</p>
       </div>
       <div class="reveal">
         <span class="label">Who We Help</span>
         <ul class="who-list">
           <li>Grapplers &amp; combat athletes</li>
-          <li>Athletes returning from injury</li>
+          <li>Older adults building strength, balance &amp; independence</li>
+          <li>Patients managing chronic conditions, type 2 diabetes, cardiovascular &amp; metabolic</li>
+          <li>Injured workers under NSW workers compensation</li>
+          <li>Patients referred on a Medicare care plan (CDM)</li>
           <li>People in pain who want a plan, not a printout</li>
-          <li>People managing chronic conditions</li>
-          <li>Workers recovering from injury</li>
-          <li>Anyone starting strength training the right way</li>
         </ul>
         <span class="label" style="display:block; margin-top:28px;">What to bring</span>
         <ul class="who-list">
-          <li>Comfortable clothes you can move in</li>
           <li>Any referral or care plan paperwork</li>
           <li>Scans or imaging reports, if you have them</li>
           <li>Private health card, if claiming extras</li>
         </ul>
       </div>
+    </div>
+    <div class="wrap">
+      <p class="fees-note center reveal">Rebates may apply through Medicare care plans (ask your GP), private health extras, DVA, CTP, or workers compensation. We confirm all costs with you before your first appointment, no surprises.</p>
     </div>
   </section>
 
@@ -227,7 +243,7 @@
       <div class="sec-head reveal">
         <span class="label">Reviews</span>
         <h2 class="display">Rated 5.0 on Google.</h2>
-        <p class="rating" style="margin-top:14px;"><span class="stars">★★★★★</span> 5.0 from 10 reviews · <a href="https://www.google.com/maps/search/Fortis+Physiology+Auburn+NSW" target="_blank" rel="noopener">Read them on Google</a></p>
+        <p class="rating" style="margin-top:14px;"><span class="stars">★★★★★</span> 5.0 on Google · <a href="https://www.google.com/maps/search/Fortis+Physiology+Auburn+NSW" target="_blank" rel="noopener">Read our reviews</a></p>
       </div>
       <div class="review-track reveal">
         <blockquote>
@@ -283,7 +299,7 @@
         </details>
         <details>
           <summary>Can I just walk in?</summary>
-          <p class="a">No, we are appointment only. Call or text 0434 068 216 with your name and what is going on, and we will reply with available times.</p>
+          <p class="a">No, we are appointment only. <a href="booking.html">Book online</a>, or call or text 0424 309 389 with your name and what is going on, and we will reply with available times.</p>
         </details>
         <details>
           <summary>Physiotherapist or exercise physiologist, which one do I need?</summary>
@@ -303,7 +319,7 @@
         </details>
         <details>
           <summary>Do you only work with athletes?</summary>
-          <p class="a">No. We work with everyday people in pain, injured workers, and people managing chronic conditions. The same standards apply whether your goal is a comp podium or carrying the groceries without pain.</p>
+          <p class="a">No. We work with everyday people in pain, injured workers, older adults, and people managing chronic conditions. The same standards apply whether your goal is a comp podium or carrying the groceries without pain.</p>
         </details>
         <details>
           <summary>Is exercise safe for my condition?</summary>
@@ -325,13 +341,13 @@
       <span class="label">Contact</span>
       <h2 class="display reveal">Let's get you moving.</h2>
       <div class="contact-lines reveal">
-        <a href="tel:+61434068216"><span class="k">Call or Text</span>0434 068 216</a>
+        <a href="tel:+61424309389"><span class="k">Call or Text</span>0424 309 389</a>
         <a href="mailto:contact@fortisphysiology.com"><span class="k">Email</span>contact@fortisphysiology.com</a>
         <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener"><span class="k">Instagram</span>@fortisphysiology</a>
         <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener"><span class="k">Location</span>10 Raglan Road, Auburn NSW</a>
       </div>
       <span class="appt-only">Appointment only, no walk-ins</span>
-      <p class="contact-note">To book, call or text with your name and what is going on, and we will reply with available times. Text or email gets the fastest reply. Consultations available in English and Turkish.</p>
+      <p class="contact-note">To book, <a href="booking.html" style="color:inherit;">use the booking form</a>, or call or text with your name and what is going on, and we will reply with available times. Consultations available in English and Turkish.</p>
     </div>
   </section>
 
@@ -354,7 +370,7 @@
       </div>
       <div>
         <h5>Contact</h5>
-        <a href="tel:+61434068216">0434 068 216</a>
+        <a href="tel:+61424309389">0424 309 389</a>
         <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a>
         <a href="https://instagram.com/fortisphysiology" target="_blank" rel="noopener">@fortisphysiology</a>
         <a href="booking.html">Book an appointment</a>
