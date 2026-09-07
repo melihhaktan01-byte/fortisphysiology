@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Refer a Patient • Fortis Physiology • Auburn NSW</title>
-<meta name="description" content="Refer a patient to Fortis Physiology, Auburn NSW. Physiotherapy and exercise physiology, Medicare CDM, workers compensation, DVA, CTP. Capacity for new patients now.">
+<meta name="description" content="Refer a patient to Fortis Physiology, Auburn NSW. Physiotherapy and exercise physiology, Medicare, workers compensation, DVA, CTP. Capacity for new patients now.">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="canonical" href="https://fortisphysiology.com/referrers.html">
 <meta name="theme-color" content="#EAE5DA">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -32,7 +32,6 @@
       <a href="/#patients">Patients</a>
       <a href="booking.html">Book</a>
       <a href="/#contact">Contact</a>
-      <a class="nav-phone" href="tel:+61424309389">0424 309 389</a>
     </nav>
   </div>
 </header>
@@ -43,18 +42,91 @@
     <div class="wrap">
       <p class="eyebrow">For Referrers</p>
       <h1 class="display" style="font-size: clamp(2.2rem, 4.8vw, 3.8rem);">Referring a patient<br>is simple.</h1>
-      <p class="hero-sub"><strong>We currently have capacity for new patients.</strong> Referred patients are onboarded at the earliest available appointment, and you receive correspondence after the initial assessment.</p>
-      <div class="hero-cta">
-        <a class="btn" href="mailto:contact@fortisphysiology.com">Email a referral</a>
-      </div>
+      <p class="hero-sub"><strong>We currently have capacity for new patients.</strong> Referred patients are onboarded at the earliest available appointment, and you receive correspondence after the initial assessment and at discharge.</p>
     </div>
   </div>
 
-  <section class="dark">
+  <section style="padding-top: clamp(28px, 4vh, 48px);">
+    <div class="wrap">
+
+      <div class="form-sent" id="form-sent" hidden style="margin-bottom: 26px;">
+        Thank you. We will reach out to you shortly to introduce ourselves and answer any questions.
+      </div>
+
+      <div class="ref-cta-grid reveal">
+        <div class="ref-card">
+          <h3>Email a referral</h3>
+          <p>Send it through and we will contact the patient directly to arrange their first appointment.</p>
+          <ul class="mini-list">
+            <li>Patient name, DOB and contact details</li>
+            <li>Presenting condition and relevant history</li>
+            <li>Any imaging or specialist reports</li>
+            <li>Care plan paperwork, if applicable</li>
+            <li>Claim number and insurer, for workers compensation or CTP</li>
+          </ul>
+          <a class="btn" href="mailto:contact@fortisphysiology.com">Email a referral</a>
+        </div>
+        <div class="ref-card light">
+          <h3>Or we will contact you</h3>
+          <p>Leave your details and we will reach out, whether that is to introduce the clinic, answer questions, or set up a referral pathway for your practice.</p>
+          <form class="book-form" id="ref-form" action="https://formsubmit.co/contact@fortisphysiology.com" method="POST">
+            <input type="hidden" name="_subject" value="Referrer contact request — fortisphysiology.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://fortisphysiology.com/referrers.html?sent=1">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <label>Your name
+              <input type="text" name="Name" required autocomplete="name">
+            </label>
+            <label>Practice / clinic
+              <input type="text" name="Practice" required autocomplete="organization">
+            </label>
+            <label>Phone
+              <input type="tel" name="Phone" required autocomplete="tel">
+            </label>
+            <label>Email
+              <input type="email" name="Email" autocomplete="email">
+            </label>
+            <button class="btn" type="submit">Request a call back</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="ref-why reveal">
+        <div>
+          <h4>Capacity for new patients now</h4>
+          <p>Referred patients are onboarded at the earliest available appointment, no waiting list.</p>
+        </div>
+        <div>
+          <h4>You stay in the loop</h4>
+          <p>Assessment letter with diagnosis and plan after the first visit, progress updates on request, discharge summary at the end.</p>
+        </div>
+        <div>
+          <h4>One referral, whole pathway</h4>
+          <p>Physiotherapy and exercise physiology under one roof, patients move from treatment to structured rehab without a second referral.</p>
+        </div>
+        <div>
+          <h4>Direct line to the clinician</h4>
+          <p>You talk to the person treating your patient, not a front desk.</p>
+        </div>
+        <div>
+          <h4>Funding covered</h4>
+          <p>Medicare care plans, DVA, workers compensation, CTP, My Aged Care and private extras with HICAPS.</p>
+        </div>
+        <div>
+          <h4>English &amp; Turkish</h4>
+          <p>Consultations in both languages, no interpreter needed for your Turkish-speaking patients.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding-top: clamp(28px, 4vh, 48px);">
     <div class="wrap">
       <div class="ref-grid reveal">
         <div class="ref-col">
-          <p style="font-size:0.98rem;">We accept referrals from GPs, specialists and allied health for exercise physiology and physiotherapy. Every referred patient gets a structured initial assessment. You get a letter after that assessment, and a summary at discharge.</p>
+          <p style="font-size:0.98rem;">We accept referrals from GPs, specialists and allied health for exercise physiology and physiotherapy. Every referred patient gets a structured initial assessment, evidence-based active care, and clear documentation back to you.</p>
           <span class="label">What to refer</span>
           <ul class="ref-list">
             <li>Musculoskeletal injuries<small>Back, neck, shoulder, hip and knee, acute or persistent</small></li>
@@ -62,6 +134,7 @@
             <li>Work-related injuries<small>Active claims, with return-to-work planning and reporting</small></li>
             <li>Persistent pain &amp; deconditioning<small>Patients needing structured, supervised exercise rather than passive care</small></li>
             <li>Chronic conditions where exercise is indicated<small>Including type 2 diabetes, cardiovascular and metabolic conditions</small></li>
+            <li>Older adults losing strength or balance<small>Falls risk, mobility and independence, dosed safely</small></li>
           </ul>
         </div>
         <div class="ref-col">
@@ -76,17 +149,6 @@
             </ol>
           </div>
           <div class="ref-box">
-            <h4>To refer, email us with:</h4>
-            <ul>
-              <li>Patient name, DOB and contact details</li>
-              <li>Presenting condition and relevant history</li>
-              <li>Any imaging or specialist reports</li>
-              <li>CDM plan paperwork, if applicable</li>
-              <li>Claim number and insurer details, for workers compensation or CTP</li>
-            </ul>
-            <p class="mail">Send to <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a></p>
-          </div>
-          <div class="ref-box">
             <h4>What you can expect from us</h4>
             <ul>
               <li>Capacity for new patients, onboarded at the earliest available appointment</li>
@@ -95,6 +157,7 @@
               <li>Evidence-based, active care, exercise is the core of treatment, not an afterthought</li>
               <li>A direct line to the treating clinician</li>
             </ul>
+            <p class="mail">Refer to <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a></p>
           </div>
         </div>
       </div>
@@ -107,6 +170,7 @@
       <h2 class="display reveal">Send one through today.</h2>
       <div class="contact-lines reveal">
         <a href="mailto:contact@fortisphysiology.com"><span class="k">Email</span>contact@fortisphysiology.com</a>
+        <a href="tel:+61424309389"><span class="k">Call or Text</span>0424 309 389</a>
         <a href="https://maps.google.com/?q=10+Raglan+Road+Auburn+NSW" target="_blank" rel="noopener"><span class="k">Location</span>10 Raglan Road, Auburn NSW</a>
       </div>
       <p class="contact-note">We reply to every referral. If anything about a patient's suitability is unclear, email us and we will give you a straight answer.</p>
@@ -144,6 +208,13 @@
     </div>
   </div>
 </footer>
+
+<script>
+  if (new URLSearchParams(location.search).get("sent") === "1") {
+    document.getElementById("form-sent").hidden = false;
+    document.getElementById("form-sent").scrollIntoView({block: "center"});
+  }
+</script>
 
 </body>
 </html>

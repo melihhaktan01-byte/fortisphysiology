@@ -73,14 +73,6 @@ header nav a {
   transition: border-color 0.2s, color 0.2s;
 }
 header nav a:hover { color: var(--oxide); border-color: var(--oxide); }
-header nav a.nav-phone {
-  border: 1px solid var(--ink);
-  border-radius: var(--r-sm);
-  padding: 8px 14px;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-header nav a.nav-phone:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
 
 /* ---------- hero ---------- */
 .hero {
@@ -121,13 +113,19 @@ header nav a.nav-phone:hover { background: var(--ink); color: var(--bone); borde
 .chips a:hover { background: var(--ink); color: var(--bone); }
 .hero-cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 .hero-loc {
-  margin-top: 22px;
-  font-size: 0.86rem; font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink-soft);
+  margin-top: 30px;
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
-.hero-loc a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+.hero-loc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
 .hero-loc a:hover { color: var(--oxide); border-color: var(--oxide); }
+.hero-appt {
+  margin-top: 8px;
+  font-size: 0.76rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  color: rgba(35, 38, 43, 0.65);
+}
 
 .btn {
   display: inline-block;
@@ -219,8 +217,6 @@ section { padding: clamp(56px, 9vh, 100px) 0; }
   font-weight: 800; text-transform: uppercase;
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   line-height: 1.05;
-  min-height: 2.15em;
-  display: flex; align-items: flex-end; justify-content: center;
 }
 .team-card .cred {
   font-size: 0.88rem; color: rgba(234, 229, 218, 0.6);
@@ -340,7 +336,7 @@ section { padding: clamp(56px, 9vh, 100px) 0; }
 .review-more a:hover { text-decoration: underline; }
 .review-hint { margin-top: 10px; font-size: 0.78rem; color: rgba(35, 38, 43, 0.6); }
 
-/* booking form */
+/* booking + referrer forms */
 .book-form {
   max-width: 640px;
   margin: 26px auto 0;
@@ -381,43 +377,81 @@ section { padding: clamp(56px, 9vh, 100px) 0; }
 .ref-band p { font-size: 0.98rem; color: var(--ink-soft); }
 .ref-band p strong { color: var(--ink); }
 
-/* referrals page */
+/* referrers page */
+.ref-cta-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 2.5vw, 32px);
+  align-items: stretch;
+}
+.ref-card {
+  border: 1px solid var(--ink);
+  border-radius: var(--r-md);
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--bone);
+  text-align: left;
+}
+.ref-card.light { background: var(--bone-deep); border-color: var(--line); }
+.ref-card h3 {
+  font-variation-settings: "wdth" 118;
+  font-weight: 800; text-transform: uppercase;
+  font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.1;
+  margin-bottom: 10px;
+}
+.ref-card > p { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 18px; max-width: 48ch; }
+.ref-card .book-form { margin: 18px 0 0; max-width: none; gap: 14px; }
+.ref-card .mini-list { list-style: none; margin: 0 0 22px; }
+.ref-card .mini-list li {
+  padding: 6px 0; font-size: 0.93rem; color: var(--ink-soft);
+  display: flex; gap: 10px; align-items: baseline;
+}
+.ref-card .mini-list li::before { content: "→"; color: var(--oxide); }
+
+.ref-why {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(28px, 4vh, 44px);
+}
+.ref-why div { border-top: 2px solid var(--oxide); padding-top: 14px; }
+.ref-why h4 { font-size: 1rem; font-weight: 700; margin-bottom: 5px; }
+.ref-why p { font-size: 0.9rem; color: var(--ink-soft); }
+
 .ref-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 5vw, 80px); align-items: start;
 }
-.ref-list { list-style: none; border-top: 1px solid var(--line-light); margin: 10px 0 30px; }
+.ref-list { list-style: none; margin: 10px 0 30px; }
 .ref-list li {
-  padding: 13px 0; border-bottom: 1px solid var(--line-light);
+  padding: 11px 0;
   display: flex; align-items: baseline; gap: 13px;
   font-size: 0.98rem; font-weight: 600;
 }
-.ref-list li::before { content: "→"; color: #D4634E; font-weight: 400; }
+.ref-list li::before { content: "→"; color: var(--oxide); font-weight: 400; }
 .ref-list li small {
   display: block; font-weight: 400; font-size: 0.87rem;
-  color: rgba(234, 229, 218, 0.6);
+  color: var(--ink-soft);
 }
 .ref-copy p { margin-bottom: 16px; font-size: 0.98rem; }
 .ref-copy .label, .ref-col .label { margin-top: 22px; display: block; }
 .ref-box {
-  border: 1px solid var(--line-light);
+  border: 1px solid var(--line);
   border-radius: var(--r-md);
   padding: clamp(22px, 3vw, 34px);
   margin-top: 24px;
+  background: var(--bone);
 }
-.ref-box h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--bone); }
+.ref-box h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
 .ref-box ul, .ref-box ol { list-style: none; }
 .ref-box li {
   padding: 7px 0; font-size: 0.93rem;
-  color: rgba(234, 229, 218, 0.78);
+  color: var(--ink-soft);
   display: flex; gap: 10px; align-items: baseline;
 }
-.ref-box ul li::before { content: "•"; color: #D4634E; }
+.ref-box ul li::before { content: "•"; color: var(--oxide); }
 .ref-box ol { counter-reset: f; }
 .ref-box ol li { counter-increment: f; }
-.ref-box ol li::before { content: counter(f); color: #D4634E; font-size: 0.8rem; font-weight: 600; }
+.ref-box ol li::before { content: counter(f); color: var(--oxide); font-size: 0.8rem; font-weight: 600; }
 .ref-box .mail { margin-top: 14px; font-size: 0.98rem; }
-.ref-box .mail a { color: #D4634E; }
+.ref-box .mail a { color: var(--oxide); }
 
 /* contact (oxide) */
 .contact { background: var(--oxide); color: var(--bone); text-align: center; }
@@ -486,10 +520,9 @@ footer {
 .foot-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; font-size: 0.76rem; }
 
 @media (max-width: 760px) {
-  .team-grid, .pat-grid, .ref-grid, .foot-grid { grid-template-columns: 1fr; }
-  .team-card h3 { min-height: 0; }
+  .team-grid, .pat-grid, .ref-grid, .foot-grid, .ref-cta-grid { grid-template-columns: 1fr; }
+  .ref-why { grid-template-columns: 1fr; gap: 18px; }
   .service-row { grid-template-columns: 40px 1fr; }
   .service-row p { grid-column: 2; }
-  header nav a:not(.nav-phone) { display: none; }
-  header nav a.nav-phone { margin-left: 0; }
+  header nav a:not(:last-child) { display: none; }
 }
