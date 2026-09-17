@@ -1,0 +1,175 @@
+/* Fortis landing page stylesheet (physio.html, physio-terms.html, physio-privacy.html). Standalone. Brand palette: ink + bone, oxide only on hover. */
+:root {
+  --bg: #131518;
+  --bg-2: #1b1e22;
+  --text: #EAE5DA;
+  --muted: rgba(234, 229, 218, 0.72);
+  --line: rgba(234, 229, 218, 0.14);
+  --oxide: #B0361F;
+  --r: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: "Archivo", system-ui, sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 620px; margin: 0 auto; padding: 0 16px; }
+.center { text-align: center; }
+
+/* Top bar */
+.top { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding: 10px 14px 10px 12px; background: var(--bg-2); border-radius: var(--r); }
+.top .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.top .brand img { height: 40px; width: auto; }
+.top .brand span { font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.82rem; white-space: nowrap; color: var(--text); }
+.top .pill { font-size: 0.86rem; font-weight: 700; padding: 10px 16px; background: var(--text); color: var(--bg); border-radius: 999px; white-space: nowrap; text-decoration: none; }
+.top .pill:hover { background: var(--oxide); color: #fff; }
+.proof-pill { margin: 12px auto 0; width: fit-content; max-width: 100%; display: flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-2); font-size: 0.86rem; font-weight: 600; white-space: nowrap; }
+.proof-pill .stars { color: #E8B84A; letter-spacing: 0.06em; font-size: 0.9rem; }
+.proof-pill .dot { color: var(--muted); }
+
+/* Hero: text box like his, all white, eyebrow plain uppercase, big H1, sub in full white */
+.hero { padding: 38px 0 6px; }
+.hero-wrap { position: relative; }
+body.hero-photo .hero-wrap { margin-top: 12px; border-radius: var(--r); overflow: hidden; background: linear-gradient(180deg, rgba(19,21,24,0.72) 0%, rgba(19,21,24,0.82) 60%, var(--bg) 100%), url("assets/lp-hero-bg.jpg") center / cover no-repeat; }
+body.hero-photo .hero { padding: 56px 0 40px; }
+.eyebrow { font-size: 1.02rem; font-weight: 500; text-transform: uppercase; color: var(--muted); letter-spacing: 0.02em; }
+h1 { font-size: clamp(2.3rem, 10vw, 3.4rem); line-height: 1.04; font-weight: 800; letter-spacing: -0.025em; margin-top: 12px; }
+.sub { margin-top: 18px; font-size: 1.1rem; line-height: 1.45; color: var(--text); }
+.sub.small { margin-top: 16px; font-weight: 600; }
+
+/* Buttons: bone on ink */
+.btn { display: block; width: 100%; text-align: center; background: var(--text); color: var(--bg); font-weight: 800; font-size: 1.05rem; padding: 18px 20px; border-radius: 12px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+.btn:hover { background: var(--oxide); color: #fff; }
+.btn.big { font-size: 1.15rem; padding: 20px; }
+.meta { margin-top: 14px; font-size: 0.9rem; color: var(--muted); }
+
+/* Next step */
+.cta-line { font-weight: 800; font-size: 1.35rem; line-height: 1.3; margin-top: 32px; margin-bottom: 16px; }
+.cta-line u { text-decoration-color: var(--text); text-underline-offset: 5px; text-decoration-thickness: 2px; }
+
+/* VSL */
+.watch { margin-top: 28px; }
+.watch .bar { background: var(--bg-2); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; padding: 10px; border-radius: var(--r) var(--r) 0 0; }
+.watch .frame { background: #000; border-radius: 0 0 var(--r) var(--r); overflow: hidden; aspect-ratio: 16 / 9; }
+.watch .frame:first-child { border-radius: var(--r); }
+.watch video { width: 100%; height: 100%; object-fit: cover; }
+
+/* Sections */
+section { padding: 60px 0 8px; }
+h2 { font-size: clamp(1.75rem, 7vw, 2.4rem); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; text-align: center; }
+h2.huge { font-size: clamp(2.1rem, 9vw, 3.1rem); line-height: 1.05; letter-spacing: -0.025em; }
+h2.huge span { display: block; }
+.lead { text-align: center; color: var(--muted); margin-top: 14px; font-size: 1.05rem; line-height: 1.5; }
+.lead.light { color: var(--text); }
+.label { display: block; text-align: center; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+
+/* Reviews: video tiles first, then pull line ABOVE the white quote card */
+.review-videos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 26px; }
+.review-videos .tile, .review-videos video { width: 100%; aspect-ratio: 4 / 5; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--line); object-fit: cover; }
+.review-videos .tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--muted); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+.review-videos .tile i { width: 48px; height: 48px; border-radius: 50%; background: var(--text); color: var(--bg); display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 1.1rem; padding-left: 4px; }
+.review { margin-top: 36px; text-align: center; }
+.review .pull { font-weight: 800; font-size: clamp(1.9rem, 8.5vw, 2.6rem); line-height: 1.05; letter-spacing: -0.03em; }
+.review .q { background: #fff; color: #131518; font-size: 1.02rem; line-height: 1.5; padding: 20px 18px; border-radius: var(--r); margin-top: 16px; }
+.review .who { margin-top: 10px; font-weight: 700; font-size: 0.98rem; }
+
+/* Authority stats */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 30px; }
+.stats div { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 8px; }
+.stats strong { display: block; font-size: 1.85rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.stats span { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 8px; line-height: 1.3; }
+
+/* How it works */
+.steps { margin-top: 30px; display: grid; gap: 0; }
+.step { text-align: center; padding: 26px 0; border-top: 1px solid var(--line); }
+.step:last-child { border-bottom: 1px solid var(--line); }
+.step img { width: 100%; border-radius: var(--r); aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: 18px; }
+.step h3 { font-size: 1.4rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
+.step p { color: var(--muted); font-size: 1rem; margin-top: 10px; }
+.step.feature { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r); padding: 26px 18px; margin: 12px 0; }
+.step.feature .label { margin-bottom: 10px; }
+.step.feature h3 { font-size: 1.6rem; }
+.step.feature p { color: var(--text); }
+
+/* Treatment cards: centred, no time labels */
+.treat { margin-top: 30px; display: grid; gap: 10px; }
+.treat div { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r); padding: 20px 18px; text-align: center; }
+.treat strong { display: block; font-size: 1.25rem; font-weight: 800; }
+.treat p { color: var(--muted); font-size: 0.97rem; margin-top: 8px; }
+
+/* Walk away */
+.outcomes { margin-top: 26px; display: grid; gap: 4px; }
+.outcomes div { padding: 22px 0; border-top: 1px solid var(--line); }
+.outcomes div:last-child { border-bottom: 1px solid var(--line); }
+.outcomes em { display: block; font-style: normal; font-size: 3.4rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1px rgba(234, 229, 218, 0.35); }
+.outcomes h3 { font-size: 1.35rem; font-weight: 800; line-height: 1.15; margin-top: 8px; }
+.outcomes p { color: var(--muted); font-size: 0.98rem; margin-top: 8px; }
+
+/* Guarantee */
+.tc { font-size: 0.86rem; color: var(--muted); margin-top: 16px; }
+.tc a { text-decoration: underline; }
+
+/* Price: two boxes side by side */
+.prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
+.pricebox { border-radius: 16px; padding: 22px 14px 18px; background: var(--bg-2); border: 1px solid var(--line); text-align: center; }
+.pricebox .amt { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.pricebox .for { color: var(--muted); font-weight: 600; font-size: 0.86rem; margin-top: 8px; line-height: 1.3; }
+.ticks { list-style: none; margin-top: 18px; display: grid; gap: 10px; text-align: left; }
+.ticks li { position: relative; padding-left: 28px; font-size: 0.88rem; line-height: 1.35; }
+.ticks li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--text); color: var(--bg); font-weight: 800; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; }
+.funding { margin-top: 14px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; }
+.funding strong { display: block; font-size: 1.05rem; }
+.funding p { color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+.funding p + p { margin-top: 8px; }
+.note.center { text-align: center; margin-top: 14px; font-size: 0.92rem; color: var(--muted); }
+.note a { text-decoration: underline; }
+
+/* FAQs */
+.faq { margin-top: 30px; display: grid; gap: 10px; }
+.faq details { background: var(--bg-2); border-radius: 12px; padding: 0 18px; }
+.faq summary { cursor: pointer; padding: 16px 0; font-weight: 700; font-size: 1.02rem; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 700; }
+.faq details[open] summary::after { content: "–"; }
+.faq .a { color: var(--muted); font-size: 0.97rem; padding: 0 0 16px; }
+
+footer { padding: 44px 0 110px; text-align: center; color: var(--muted); font-size: 0.84rem; }
+footer a { text-decoration: underline; }
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(19, 21, 24, 0.94); border-top: 1px solid var(--line); backdrop-filter: blur(8px); }
+body.form-visible .sticky { display: none; }
+
+/* Terms / privacy pages */
+.prose { color: var(--muted); font-size: 1rem; margin-top: 16px; }
+.prose strong { color: var(--text); }
+.prose + .prose { margin-top: 12px; }
+.list { display: grid; gap: 12px; margin-top: 22px; }
+.list div { background: var(--bg-2); padding: 16px; border-radius: var(--r); }
+.list strong { display: block; font-size: 1rem; }
+.list span, .list p { color: var(--muted); font-size: 0.93rem; }
+.progress-bar { height: 8px; background: var(--bg-2); border-radius: 4px; overflow: hidden; margin: 14px 0; }
+.progress-bar span { display: block; height: 100%; width: 85%; background: var(--text); }
+
+@media (min-width: 700px) { .wrap { max-width: 680px; } }
+
+h1 .nb { display: inline-block; }
+
+/* Image placeholders: visible until the real photos land, then replace each .ph with <img class="photo"> */
+.ph { width: 100%; aspect-ratio: 4 / 3; border: 1px dashed rgba(234, 229, 218, 0.35); border-radius: var(--r); background: repeating-linear-gradient(135deg, rgba(234,229,218,0.04) 0 10px, transparent 10px 20px); display: flex; align-items: center; justify-content: center; padding: 16px; margin: 0 0 16px; }
+.ph span { color: var(--muted); font-size: 0.8rem; font-weight: 600; text-align: center; line-height: 1.35; }
+.ph.portrait { aspect-ratio: 4 / 5; margin-bottom: 22px; }
+.ph.wide { aspect-ratio: 16 / 9; margin-top: 26px; margin-bottom: 0; }
+.step .ph { margin-bottom: 18px; }
+.photo { width: 100%; border-radius: var(--r); object-fit: cover; aspect-ratio: 4 / 3; margin-bottom: 16px; }
+.photo.portrait { aspect-ratio: 4 / 5; filter: grayscale(1); margin-bottom: 22px; }
+.photo.wide { aspect-ratio: 16 / 9; margin-top: 26px; }
+
+/* Accent: one token. Gold (matches the review stars). Swap the hex here to change every highlight at once. */
+:root { --accent: #B0433A; } /* logo red (#480808 to #801008), lifted for contrast on ink. Gold alt: #E8B84A */
+.hl { color: var(--accent); }
+.review .pull { color: var(--accent); }
+.stats strong { color: var(--accent); }
+.outcomes em { color: transparent; -webkit-text-stroke: 1px rgba(232, 184, 74, 0.55); }
+.step.feature .label { color: var(--accent); }
+.cta-line u { text-decoration-color: var(--accent); }
+.ticks li::before { background: var(--accent); color: var(--bg); }
+.proof-pill .stars { color: #E8B84A; }
