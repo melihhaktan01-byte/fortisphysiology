@@ -90,7 +90,14 @@
 
       <!-- VIDEO REVIEWS: replace each .tile with <video controls playsinline preload="metadata" poster="assets/lp-review-N.jpg"><source src="assets/lp-review-N.mp4" type="video/mp4"></video> once the athlete clips are cut. Vertical 4:5, captions burned in. -->
       <div class="review-videos">
-        <a class="tile" href="#"><i>▶</i>Patient video 1</a>
+        <div class="vid">
+          <video playsinline preload="metadata" poster="assets/lp-review-1.jpg" aria-label="Lucas Kanard, patient review"><source src="assets/lp-review-1.mp4" type="video/mp4"></video>
+          <div class="ov" role="button" tabindex="0" aria-label="Play Lucas Kanard's review">
+            <div class="who"><span class="n">Lucas Kanard</span><span class="r">ADCC &amp; CJI veteran</span></div>
+            <span class="play">&#9654;</span>
+            <div class="say">"Three weeks out from ADCC... it gave me the confidence to compete."</div>
+          </div>
+        </div>
         <a class="tile" href="#"><i>▶</i>Patient video 2</a>
         <a class="tile" href="#"><i>▶</i>Patient video 3</a>
         <a class="tile" href="#"><i>▶</i>Patient video 4</a>
@@ -155,7 +162,7 @@
           <p>Hands-on treatment where it's appropriate, in the same appointment. You don't leave with only a conversation.</p>
         </div>
         <div class="step">
-          <div class="ph "><span>PHOTO: the plan on the desk with the patient</span></div>
+          <img src="assets/lp-plan.jpg" alt="Melih discussing a treatment plan with a patient in the Fortis clinic" loading="lazy">
           <h3>Leave with a plan</h3>
           <p>We collaborate across practitioners to tailor a plan to you, however complex the injury.</p>
         </div>
@@ -291,6 +298,17 @@
   for (var i = 0; i < links.length; i++) {
     links[i].href = BOOK_URL;
     links[i].addEventListener('click', function(){ if (window.fbq) { fbq('track', 'Schedule', { audience: variant }); } });
+  }
+  // Video review cards: poster + overlays until tapped, then native controls take over.
+  var vids = document.querySelectorAll('.review-videos .vid');
+  for (var k = 0; k < vids.length; k++) {
+    (function(card){
+      var v = card.querySelector('video'), ov = card.querySelector('.ov');
+      if (!v || !ov) return;
+      function go(){ card.classList.add('playing'); v.controls = true; v.play(); }
+      ov.addEventListener('click', go);
+      ov.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    })(vids[k]);
   }
   var main = document.getElementById('book');
   if (main && 'IntersectionObserver' in window) {
