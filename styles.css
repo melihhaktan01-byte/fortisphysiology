@@ -519,8 +519,14 @@ footer {
 .foot-grid p { max-width: 34ch; }
 .foot-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; font-size: 0.76rem; }
 
+/* Clinic photos: strip under the hero, team photo beside the service cards */
+.photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--line-light); border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+.photo-strip img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.team-grid { grid-template-columns: 0.72fr 1fr 1fr; }
+.team-photo { background: var(--ink); overflow: hidden; }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
 @media (max-width: 760px) {
-  .team-grid, .pat-grid, .ref-grid, .foot-grid, .ref-cta-grid { grid-template-columns: 1fr; }
+  .team-grid, .pat-grid, .ref-grid, .foot-grid, .ref-cta-grid { grid-template-columns: 1fr; } .team-photo img { aspect-ratio: 4 / 3; max-height: 420px; } .photo-strip { grid-template-columns: 1fr 1fr; } .photo-strip img:nth-child(3) { display: none; }
   .ref-why { grid-template-columns: 1fr; gap: 18px; }
   .service-row { grid-template-columns: 40px 1fr; }
   .service-row p { grid-column: 2; }
