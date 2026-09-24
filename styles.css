@@ -519,14 +519,18 @@ footer {
 .foot-grid p { max-width: 34ch; }
 .foot-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; font-size: 0.76rem; }
 
-/* Clinic photos: strip under the hero, team photo beside the service cards */
-.photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--line-light); border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-.photo-strip img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
-.team-grid { grid-template-columns: 0.72fr 1fr 1fr; }
-.team-photo { background: var(--ink); overflow: hidden; }
-.team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
+/* Greyed clinic photos behind section text (same grayscale treatment as the landing page) */
+.bg-photo { position: relative; isolation: isolate; overflow: hidden; }
+.bg-photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; filter: grayscale(1); }
+.bg-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; }
+.bg-team::before { background-image: url("assets/lp-team.jpg"); background-position: center top; opacity: 0.32; }
+.bg-team::after { background: linear-gradient(rgba(19,21,24,0.55), rgba(19,21,24,0.75)); }
+.bg-team .team-grid { background: transparent; }
+.bg-team .team-card { background: rgba(19,21,24,0.45); }
+.bg-treat::before { background-image: url("assets/lp-handson.jpg"); opacity: 0.16; }
+.bg-room::before { background-image: url("assets/clinic-room.jpg"); opacity: 0.13; }
 @media (max-width: 760px) {
-  .team-grid, .pat-grid, .ref-grid, .foot-grid, .ref-cta-grid { grid-template-columns: 1fr; } .team-photo img { aspect-ratio: 4 / 3; max-height: 420px; } .photo-strip { grid-template-columns: 1fr 1fr; } .photo-strip img:nth-child(3) { display: none; }
+  .team-grid, .pat-grid, .ref-grid, .foot-grid, .ref-cta-grid { grid-template-columns: 1fr; }
   .ref-why { grid-template-columns: 1fr; gap: 18px; }
   .service-row { grid-template-columns: 40px 1fr; }
   .service-row p { grid-column: 2; }
