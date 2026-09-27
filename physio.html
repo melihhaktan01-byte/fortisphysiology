@@ -23,6 +23,7 @@
 <script>
   window.FORTIS = {
     PIXEL_ID: '2569062383611603',                                // Meta Events Manager > Data sources > Pixel ID (digits only)
+    PIXEL_ID_ADS: '2506941369790973',                            // second pixel: owned by the ad account the ads run from (1791191815049207)
     CLARITY_ID: '',                                 // clarity.microsoft.com > project > Settings > Project ID
     BOOK_URL: 'https://fortis-physiology.au4.cliniko.com/bookings'  // Cliniko > Settings > Online bookings > your booking link
   };
@@ -32,7 +33,7 @@
     var c = window.FORTIS;
     if (c.PIXEL_ID) {
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', c.PIXEL_ID); fbq('track', 'PageView');
+      fbq('init', c.PIXEL_ID); if (c.PIXEL_ID_ADS) fbq('init', c.PIXEL_ID_ADS); fbq('track', 'PageView');
     }
     if (c.CLARITY_ID) {
       (function(c2,l,a,r,i,t,y){c2[a]=c2[a]||function(){(c2[a].q=c2[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",c.CLARITY_ID);
