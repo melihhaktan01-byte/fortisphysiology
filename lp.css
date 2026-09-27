@@ -184,3 +184,18 @@ h1 .nb { display: inline-block; }
 .cta-line u { text-decoration-color: var(--accent); }
 .ticks li::before { background: var(--accent); color: var(--bg); }
 .proof-pill .stars { color: #E8B84A; }
+
+/* Small phones (27 Sep 2026): stop the top bar, proof pill and headline running past the edge. */
+@media (max-width: 480px) {
+  .top { gap: 10px; }
+  .top .brand { min-width: 0; }
+  .top .brand img { height: 34px; }
+  .top .brand span { white-space: normal; width: min-content; line-height: 1.1; font-size: 0.76rem; }
+  .top .pill { padding: 9px 14px; font-size: 0.84rem; }
+  .proof-pill { font-size: 0.8rem; padding: 8px 12px; gap: 6px; }
+  h1 { font-size: clamp(1.72rem, 8.6vw, 2.3rem); }
+}
+@media (max-width: 360px) {
+  .proof-pill { white-space: normal; flex-wrap: wrap; justify-content: center; text-align: center; row-gap: 2px; }
+  .eyebrow { letter-spacing: 0.03em; font-size: 0.78rem; }
+}
