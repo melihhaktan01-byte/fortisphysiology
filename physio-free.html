@@ -338,6 +338,9 @@
 
 <script>
 (function(){
+  // Ad clicks must land at the top: stop browsers restoring an old scroll position on this page.
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+  window.addEventListener('pageshow', function(){ window.scrollTo(0, 0); });
   // A/B on the audience word. Ad A links to physio.html (BJJ athletes). Ad B links to physio.html?a=grapplers (GRAPPLERS).
   // The choice sticks for return visits. The Schedule pixel event carries the variant so Events Manager can split it.
   var variant = 'bjj';
