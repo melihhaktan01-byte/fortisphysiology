@@ -354,6 +354,15 @@
   var OPTIN_URL = 'https://contact-4483--fortis-optin-api.modal.run/subscribe';
   var OPTIN_TOKEN = '04bce824a9605fe12509110fdc40df681de7cb560591030a';
   var of = document.getElementById('optin-form'), om = document.getElementById('optin-msg');
+  // One-tap mode: ?e=<email>&n=<first name> from the sender's merge tags pre-fills the box, so the reader only confirms.
+  try {
+    var qs = new URLSearchParams(location.search), pe = (qs.get('e') || '').trim(), pn = (qs.get('n') || '').trim();
+    if (of && pe && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(pe) && pe.indexOf('{') < 0 && pe.indexOf('*|') < 0) {
+      of.email.value = pe; if (pn && pn.indexOf('{') < 0 && pn.indexOf('*|') < 0) of.first_name.value = pn;
+      of.querySelector('button').textContent = 'Yes, sign me up \u2192';
+      om.textContent = 'Your details are filled in. One tap and you are on the list.'; om.className = 'optin-msg ok';
+    }
+  } catch (x) {}
   if (of) of.addEventListener('submit', function(e){
     e.preventDefault();
     var fn = of.first_name.value.trim(), em = of.email.value.trim();
