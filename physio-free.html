@@ -318,7 +318,7 @@
           <label><input type="radio" name="door" value="parent"> My child trains</label>
           <label><input type="radio" name="door" value="both"> Both</label>
         </div>
-        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="text" name="hp_x9" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" data-loaded="">
         <button class="btn" type="submit">Send me the emails →</button>
         <p class="meta center">General information only, not individual health advice. You can unsubscribe with one click. <a href="physio-privacy.html">Privacy</a></p>
         <p class="optin-msg" id="optin-msg" role="status" aria-live="polite"></p>
@@ -354,6 +354,7 @@
   // Door 2: email opt-in box -> fortis-optin endpoint -> Sender.net
   var OPTIN_URL = 'https://contact-4483--fortis-optin-api.modal.run/subscribe';
   var OPTIN_TOKEN = '04bce824a9605fe12509110fdc40df681de7cb560591030a';
+  var OPTIN_T0 = Date.now();
   var of = document.getElementById('optin-form'), om = document.getElementById('optin-msg');
   // One-tap mode: ?e=<email>&n=<first name> from the sender's merge tags pre-fills the box, so the reader only confirms.
   try {
@@ -371,7 +372,7 @@
     var btn = of.querySelector('button'); btn.disabled = true; btn.textContent = 'Sending...';
     var src = 'physio-free'; try { var u = new URLSearchParams(location.search).get('utm_source'); if (u) src += ':' + u; } catch (x) {}
     fetch(OPTIN_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + OPTIN_TOKEN },
-      body: JSON.stringify({ first_name: fn, email: em, door: of.door.value, website: of.website.value, source: src }) })
+      body: JSON.stringify({ first_name: fn, email: em, door: of.door.value, hp: of.hp_x9.value, elapsed: Math.round((Date.now() - OPTIN_T0) / 1000), source: src }) })
     .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function(){ of.querySelectorAll('input,button').forEach(function(x){ x.disabled = true; }); btn.textContent = "You're in"; om.textContent = 'Done. First email lands soon. Check Promotions or Spam if you do not see it.'; om.className = 'optin-msg ok'; if (window.fbq) fbq('track', 'Subscribe', { page: 'physio-free' }); })
     .catch(function(){ btn.disabled = false; btn.textContent = 'Send me the emails →'; om.textContent = 'That did not go through. Email contact@fortisphysiology.com with "emails" and we will add you.'; om.className = 'optin-msg err'; });
