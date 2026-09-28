@@ -80,6 +80,7 @@
   <div class="wrap center" id="book">
     <p class="cta-line"><u>Next step:</u> claim your free 15 minute physical assessment.</p>
     <a class="btn big" href="#" data-book>Claim Free 15 Minute Physical Assessment →</a>
+    <p class="note center" style="margin-top:12px">New patients only. One free assessment per person. No obligation.</p>
   </div>
 
   <!-- 4. Reviews -->
@@ -372,7 +373,7 @@
     fetch(OPTIN_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + OPTIN_TOKEN },
       body: JSON.stringify({ first_name: fn, email: em, door: of.door.value, website: of.website.value, source: src }) })
     .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
-    .then(function(){ of.querySelectorAll('input,button').forEach(function(x){ x.disabled = true; }); btn.textContent = "You're in"; om.textContent = 'Done. First email lands soon. Check Promotions or Spam if you do not see it.'; om.className = 'optin-msg ok'; if (window.fbq) fbq('track', 'Lead', { page: 'physio-free' }); })
+    .then(function(){ of.querySelectorAll('input,button').forEach(function(x){ x.disabled = true; }); btn.textContent = "You're in"; om.textContent = 'Done. First email lands soon. Check Promotions or Spam if you do not see it.'; om.className = 'optin-msg ok'; if (window.fbq) fbq('track', 'Subscribe', { page: 'physio-free' }); })
     .catch(function(){ btn.disabled = false; btn.textContent = 'Send me the emails →'; om.textContent = 'That did not go through. Email contact@fortisphysiology.com with "emails" and we will add you.'; om.className = 'optin-msg err'; });
   });
   var BOOK_URL = (window.FORTIS && window.FORTIS.BOOK_URL) || '#';
