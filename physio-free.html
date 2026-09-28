@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="lp.css?v=10">
+<link rel="stylesheet" href="lp.css?v=11">
 <!-- ONE CONFIG BLOCK. Fill the three IDs and nothing else on the page needs touching. -->
 <script>
   window.FORTIS = {
@@ -300,6 +300,31 @@
     </div>
   </section>
 
+  <!-- 12. Email opt-in (Door 2: not ready to book). Posts to the fortis-optin Modal endpoint, which creates the Sender.net subscriber server side. -->
+  <section id="emails" class="optin-section">
+    <div class="wrap">
+      <p class="label">Not ready to book?</p>
+      <h2>Get the free training and recovery emails</h2>
+      <p class="lead">Over the next few weeks we're sending out how the grapplers who never seem to get hurt actually train, warm up and recover. One short email at a time, from physios who train. Unsubscribe any time.</p>
+      <form class="optin" id="optin-form" novalidate>
+        <label class="field" for="op-fn">First name</label>
+        <input type="text" id="op-fn" name="first_name" autocomplete="given-name" required>
+        <label class="field" for="op-em">Email</label>
+        <input type="email" id="op-em" name="email" autocomplete="email" required>
+        <span class="field">Who trains?</span>
+        <div class="doors">
+          <label><input type="radio" name="door" value="adult" checked> I train</label>
+          <label><input type="radio" name="door" value="parent"> My child trains</label>
+          <label><input type="radio" name="door" value="both"> Both</label>
+        </div>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit">Send me the emails →</button>
+        <p class="meta center">General information only, not individual health advice. You can unsubscribe with one click. <a href="physio-privacy.html">Privacy</a></p>
+        <p class="optin-msg" id="optin-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -324,6 +349,23 @@
     var w = document.querySelectorAll('[data-aud]');
     for (var j = 0; j < w.length; j++) { w[j].textContent = 'GRAPPLERS'; }
   }
+
+  // Door 2: email opt-in box -> fortis-optin endpoint -> Sender.net
+  var OPTIN_URL = 'https://contact-4483--fortis-optin-api.modal.run/subscribe';
+  var OPTIN_TOKEN = '04bce824a9605fe12509110fdc40df681de7cb560591030a';
+  var of = document.getElementById('optin-form'), om = document.getElementById('optin-msg');
+  if (of) of.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fn = of.first_name.value.trim(), em = of.email.value.trim();
+    if (!fn || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { om.textContent = 'Add your first name and a valid email.'; om.className = 'optin-msg err'; return; }
+    var btn = of.querySelector('button'); btn.disabled = true; btn.textContent = 'Sending...';
+    var src = 'physio-free'; try { var u = new URLSearchParams(location.search).get('utm_source'); if (u) src += ':' + u; } catch (x) {}
+    fetch(OPTIN_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + OPTIN_TOKEN },
+      body: JSON.stringify({ first_name: fn, email: em, door: of.door.value, website: of.website.value, source: src }) })
+    .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+    .then(function(){ of.querySelectorAll('input,button').forEach(function(x){ x.disabled = true; }); btn.textContent = "You're in"; om.textContent = 'Done. First email lands soon. Check Promotions or Spam if you do not see it.'; om.className = 'optin-msg ok'; if (window.fbq) fbq('track', 'Lead', { page: 'physio-free' }); })
+    .catch(function(){ btn.disabled = false; btn.textContent = 'Send me the emails →'; om.textContent = 'That did not go through. Email contact@fortisphysiology.com with "emails" and we will add you.'; om.className = 'optin-msg err'; });
+  });
   var BOOK_URL = (window.FORTIS && window.FORTIS.BOOK_URL) || '#';
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) {
