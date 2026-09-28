@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book an Appointment • Fortis Physiology • Auburn NSW</title>
-<meta name="description" content="Book a physiotherapy or exercise physiology appointment at Fortis Physiology, Auburn NSW. Send a booking request online and we reply with available times.">
+<meta name="description" content="Book a physiotherapy or exercise physiology appointment at Fortis Physiology, Auburn NSW. Pick a time online, free 15-minute assessment, initial consultation or follow-up.">
 <link rel="icon" type="image/png" href="assets/favicon-64.png">
 <link rel="canonical" href="https://fortisphysiology.com/booking.html">
 <meta name="theme-color" content="#EAE5DA">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Book an Appointment • Fortis Physiology • Auburn NSW">
-<meta property="og:description" content="By appointment only. Send a booking request with your name and what is going on, and we will reply with available times.">
+<meta property="og:description" content="By appointment only. Pick a time online: free 15-minute assessment, initial consultation or follow-up.">
 <meta property="og:url" content="https://fortisphysiology.com/booking.html">
 <meta property="og:image" content="https://fortisphysiology.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,6 +18,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=7">
+<style>
+  /* Online booking runs on Cliniko. Each card deep-links to one appointment type (Settings > Appointment types > ID in the URL). 2049035727672452643 is filled in once the free 15-min type exists in Cliniko. */
+  .book-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; text-align: left; }
+  .book-opt { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px 20px; text-decoration: none; color: var(--ink); transition: border-color 0.2s, transform 0.2s; }
+  .book-opt:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .book-opt.featured { border-color: var(--oxide); }
+  .book-opt .opt-k { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--oxide); margin-bottom: 10px; }
+  .book-opt h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+  .book-opt p { font-size: 0.92rem; color: var(--ink-soft); flex: 1; margin-bottom: 16px; }
+  .book-opt .btn { text-align: center; padding: 14px 18px; }
+  .book-opt.featured .btn { background: var(--oxide); }
+  .book-opt.featured .btn:hover { background: var(--ink); }
+  @media (max-width: 760px) { .book-options { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -42,44 +56,36 @@
     <div class="wrap">
       <p class="eyebrow">Booking</p>
       <h1 class="display" style="font-size: clamp(2.2rem, 4.8vw, 3.8rem);">Book an appointment.</h1>
-      <p class="hero-sub"><strong>Fortis Physiology is appointment only. No walk-ins.</strong> Send a booking request below and we will reply with available times, usually the same day.</p>
+      <p class="hero-sub"><strong>Fortis Physiology is appointment only. No walk-ins.</strong> Pick a time online below. You get a confirmation straight away and we text you before you come in.</p>
     </div>
   </div>
 
   <section class="patients" style="padding-top: clamp(40px, 6vh, 64px);">
-    <div class="wrap" style="max-width: 820px; text-align: center;">
-      <span class="label">Booking Request</span>
+    <div class="wrap" style="max-width: 900px; text-align: center;">
+      <span class="label">Book online</span>
 
-      <div class="form-sent" id="form-sent" hidden>
-        Request sent. We will reply with available times, usually the same day. If it is urgent, call or text 0424 309 389.
+      <div class="book-options">
+        <a class="book-opt featured" href="https://fortis-physiology.au4.cliniko.com/bookings?appointment_type_id=2049035727672452643">
+          <span class="opt-k">15 min • Free</span>
+          <h3>Free physical assessment</h3>
+          <p>Not sure what is going on, or whether we can help? A short in-clinic look at the problem and a straight answer on what to do next. No obligation.</p>
+          <span class="btn">Book free assessment</span>
+        </a>
+        <a class="book-opt" href="https://fortis-physiology.au4.cliniko.com/bookings?appointment_type_id=1438155794401994239">
+          <span class="opt-k">60 min • $140</span>
+          <h3>Initial consultation</h3>
+          <p>Your first full appointment: assessment, a clear explanation, hands-on treatment where it helps, and the start of your plan.</p>
+          <span class="btn">Book initial</span>
+        </a>
+        <a class="book-opt" href="https://fortis-physiology.au4.cliniko.com/bookings?appointment_type_id=1439621968738395746">
+          <span class="opt-k">45 min • $120</span>
+          <h3>Follow-up</h3>
+          <p>For existing patients. Progress check, treatment, and the next step of your plan.</p>
+          <span class="btn">Book follow-up</span>
+        </a>
       </div>
 
-      <form class="book-form" id="book-form" action="https://formsubmit.co/contact@fortisphysiology.com" method="POST">
-        <input type="hidden" name="_subject" value="New booking request — fortisphysiology.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://fortisphysiology.com/booking.html?sent=1">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <label>Full name
-          <input type="text" name="Name" required autocomplete="name">
-        </label>
-        <label>Phone
-          <input type="tel" name="Phone" required autocomplete="tel">
-        </label>
-        <label>Email
-          <input type="email" name="Email" autocomplete="email">
-        </label>
-        <label>What is going on?
-          <textarea name="What is going on" required placeholder="An injury, a condition, or a goal, a sentence or two is plenty."></textarea>
-        </label>
-        <label>Preferred days or times
-          <input type="text" name="Preferred times" placeholder="e.g. weekday mornings, Saturday">
-        </label>
-        <button class="btn" type="submit">Send booking request</button>
-      </form>
-
-      <p class="form-note" style="margin-left:auto; margin-right:auto;">We review every request personally and reply with available times. Wear comfortable clothes you can move in to your appointment.</p>
-      <p class="fees-note center">All fees are confirmed with you before your first appointment. Rebates may apply through Medicare care plans, private health extras, DVA, CTP, or workers compensation.</p>
+      <p class="fees-note center">Fees are paid in clinic. Rebates may apply through Medicare care plans, private health extras, DVA, CTP, or workers compensation. Not sure which appointment? Text 0424 309 389 and we will point you to the right one.</p>
     </div>
   </section>
 
@@ -87,9 +93,9 @@
     <div class="wrap" style="max-width: 820px;">
       <span class="label">How it works</span>
       <ol class="steps">
-        <li><span class="num">1</span><div><h4>Send your request</h4><p>Use the form above, or text us your name and a sentence on what is going on.</p></div></li>
-        <li><span class="num">2</span><div><h4>We reply with times</h4><p>You will get available appointment times and anything you need to know before coming in.</p></div></li>
-        <li><span class="num">3</span><div><h4>Locked in</h4><p>Confirm a time and you are booked. Bring any referral or care plan paperwork, scans if you have them, and your private health card if claiming extras.</p></div></li>
+        <li><span class="num">1</span><div><h4>Pick a time</h4><p>Choose the appointment above, pick a slot that suits, and enter your details. Under a minute.</p></div></li>
+        <li><span class="num">2</span><div><h4>Confirmed straight away</h4><p>A confirmation lands in your email with reschedule and cancel links. We text you before your appointment.</p></div></li>
+        <li><span class="num">3</span><div><h4>Come in</h4><p>Wear clothes you can move in. Bring any referral or care plan paperwork, scans if you have them, and your private health card if claiming extras.</p></div></li>
       </ol>
     </div>
   </section>
@@ -139,13 +145,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  if (new URLSearchParams(location.search).get("sent") === "1") {
-    document.getElementById("form-sent").hidden = false;
-    document.getElementById("book-form").hidden = true;
-  }
-</script>
 
 </body>
 </html>
