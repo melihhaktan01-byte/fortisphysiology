@@ -123,6 +123,7 @@ h2.huge span { display: block; }
 /* Price: two boxes side by side */
 .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
 .pricebox { border-radius: 16px; padding: 22px 14px 18px; background: var(--bg-2); border: 1px solid var(--line); text-align: center; }
+.pricebox.free { grid-column: 1 / -1; }
 .pricebox .amt { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
 .pricebox .for { color: var(--muted); font-weight: 600; font-size: 0.86rem; margin-top: 8px; line-height: 1.3; }
 .ticks { list-style: none; margin-top: 18px; display: grid; gap: 10px; text-align: left; }
