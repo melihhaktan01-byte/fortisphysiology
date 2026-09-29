@@ -355,7 +355,7 @@
   function onScroll(){
     var h = document.documentElement.scrollHeight - window.innerHeight; if (h <= 0) return;
     var pct = Math.round((window.scrollY / h) * 100);
-    for (var j = 0; j < marks.length; j++) if (pct >= marks[j]) once('Scroll' + marks[j], { page: location.pathname });
+    for (var j = 0; j < marks.length; j++) if (pct >= (marks[j] === 100 ? 97 : marks[j])) once('Scroll' + marks[j], { page: location.pathname });
   }
   window.addEventListener('scroll', onScroll, { passive: true }); setTimeout(onScroll, 1500);
 })();
