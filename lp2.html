@@ -381,5 +381,27 @@ footer p a { color: var(--muted); }
   }
 })();
 </script>
+<script>
+/* Funnel events for Meta (custom events, no PII): Claim taps by position, scroll depth, sticky bar taps. */
+(function(){
+  if (!window.fbq) return;
+  var fired = {};
+  function once(name, data){ if (fired[name]) return; fired[name] = 1; try { fbq('trackCustom', name, data || {}); } catch (e) {} }
+  var links = document.querySelectorAll('[data-book]');
+  for (var i = 0; i < links.length; i++) (function(a, idx){
+    a.addEventListener('click', function(){
+      var pos = a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
+      try { fbq('trackCustom', 'ClaimClick', { position: pos, page: location.pathname }); } catch (e) {}
+    });
+  })(links[i], i);
+  var marks = [25, 50, 75, 100];
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight; if (h <= 0) return;
+    var pct = Math.round((window.scrollY / h) * 100);
+    for (var j = 0; j < marks.length; j++) if (pct >= marks[j]) once('Scroll' + marks[j], { page: location.pathname });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true }); setTimeout(onScroll, 1500);
+})();
+</script>
 </body>
 </html>
