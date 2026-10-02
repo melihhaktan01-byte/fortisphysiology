@@ -19,6 +19,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="lp.css?v=11">
+<style>
+  /* Explore-my-options flow: soft CTA scrolls to the offer, each card books its own service. */
+  html { scroll-behavior: smooth; }
+  #offer { scroll-margin-top: 8px; }
+  .pricebox .btn { margin-top: 18px; font-size: 1rem; padding: 14px 16px; }
+  .pricebox.pick { border-color: var(--accent); position: relative; padding-top: 30px; }
+  .pricebox .tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+</style>
 <!-- ONE CONFIG BLOCK. Fill the three IDs and nothing else on the page needs touching. -->
 <script>
   window.FORTIS = {
@@ -48,7 +56,7 @@
 <div class="wrap">
   <div class="top">
     <a class="brand" href="#"><img src="assets/lp-mark-red.png" alt=""><span>Fortis Physiology</span></a>
-    <a class="pill" href="#" data-book>Free assessment</a>
+    <a class="pill" href="#offer" data-explore>Free assessment</a>
   </div>
   <div class="proof-pill"><span class="stars">★★★★★</span> 5.0 on Google <span class="dot">·</span> 180+ athletes treated</div>
 </div>
@@ -78,9 +86,9 @@
 
   <!-- 3. Next step -->
   <div class="wrap center" id="book">
-    <p class="cta-line"><u>Next step:</u> claim your free 15 minute physical assessment.</p>
-    <a class="btn big" href="#" data-book>Claim Free 15 Minute Physical Assessment →</a>
-    <p class="note center" style="margin-top:12px">New patients only. One free assessment per person. No obligation.</p>
+    <p class="cta-line"><u>Next step:</u> see your options.</p>
+    <a class="btn big" href="#offer" data-explore>I’d like to explore my options →</a>
+    <p class="note center" style="margin-top:12px">No obligation. Nothing to pay to find out where you stand.</p>
   </div>
 
   <!-- 4. Reviews -->
@@ -146,7 +154,7 @@
         <div class="q">"Amazing set up, physio is super nice, would 100% come back and recommend him to everyone."</div>
         <p class="who">Yusuf</p>
       </div>
-      <a class="btn" href="#" data-book style="margin-top:30px">Claim Free 15 Minute Physical Assessment →</a>
+      <a class="btn" href="#offer" data-explore style="margin-top:30px">I’d like to explore my options →</a>
     </div>
   </section>
 
@@ -196,7 +204,7 @@
           <p>You'll have your therapist's personal contact details. Flare-up on a Sunday, a question before training, something that doesn't feel right after a roll: message them. We adjust your treatment or rehab on the go instead of waiting for your next appointment.</p>
         </div>
       </div>
-      <a class="btn" href="#" data-book style="margin-top:28px">Claim Free 15 Minute Physical Assessment →</a>
+      <a class="btn" href="#offer" data-explore style="margin-top:28px">I’d like to explore my options →</a>
     </div>
   </section>
 
@@ -213,7 +221,7 @@
         <details><summary>Where are you, and what should I wear?</summary><p class="a">10 Raglan Road, Auburn, inside the Sydney Wrestling Academy building, plenty of street parking. Wear clothes you can move in. Bring any scans or reports and your health fund card.</p></details>
         <details><summary>What if I need to cancel?</summary><p class="a">Text as early as you can and we'll move you. 24 hours' notice is required, otherwise a cancellation fee applies.</p></details>
       </div>
-      <a class="btn" href="#" data-book style="margin-top:22px">Claim Free 15 Minute Physical Assessment →</a>
+      <a class="btn" href="#offer" data-explore style="margin-top:22px">I’d like to explore my options →</a>
     </div>
   </section>
 
@@ -244,7 +252,7 @@
         <div><em>02</em><h3>A plan you can train around</h3><p>Modifications for the mats, exercises that fit your week, and a clear idea of what the next few weeks look like.</p></div>
         <div><em>03</em><h3>A physio you can message</h3><p>Flare-up on a Sunday? Message your therapist. We adjust the plan instead of waiting for the next appointment.</p></div>
       </div>
-      <a class="btn" href="#" data-book style="margin-top:28px">Claim Free 15 Minute Physical Assessment →</a>
+      <a class="btn" href="#offer" data-explore style="margin-top:28px">I’d like to explore my options →</a>
     </div>
   </section>
 
@@ -259,12 +267,14 @@
   </section>
 
   <!-- 10. Price -->
-  <section>
+  <section id="offer">
     <div class="wrap">
+      <p class="label">Your options</p>
       <h2>No packages, no surprises</h2>
-      <p class="lead">Start with a free 15 minute physical assessment. After that you pay per appointment, and book a follow-up only when your physio says it's warranted.</p>
+      <p class="lead">Pick where you want to start. Most people begin with the free assessment. After that you pay per appointment, and book a follow up only when your physio says it's warranted.</p>
       <div class="prices">
-        <div class="pricebox free">
+        <div class="pricebox free pick">
+          <div class="tag">Most people start here</div>
           <div class="amt">Free</div>
           <div class="for">15 minute physical assessment</div>
           <ul class="ticks">
@@ -272,24 +282,27 @@
             <li>A straight answer on what to do next</li>
             <li>No treatment on the day, no obligation</li>
           </ul>
+                  <a class="btn" href="#" data-book data-type="2049035727672452643">Book my free assessment →</a>
         </div>
         <div class="pricebox">
           <div class="amt">$180</div>
-          <div class="for">Initial assessment</div>
+          <div class="for">Initial consultation (new patients)</div>
           <ul class="ticks">
             <li>Assessment and diagnosis of the root cause</li>
             <li>Treatment starts the same day</li>
             <li>A plan plus direct access to your physio</li>
           </ul>
+                  <a class="btn" href="#" data-book data-type="1438155794401994239">Book initial →</a>
         </div>
         <div class="pricebox">
           <div class="amt">$120</div>
-          <div class="for">Subsequent treatment</div>
+          <div class="for">Follow up consultation (existing patients)</div>
           <ul class="ticks">
             <li>Only when your physio says it's warranted</li>
             <li>Plan reviewed and progressed</li>
             <li>Supervised exercise with the exercise physiologist</li>
           </ul>
+                  <a class="btn" href="#" data-book data-type="1439621968738395746">Book follow up →</a>
         </div>
       </div>
       <div class="funding">
@@ -297,7 +310,6 @@
         <p>Claim your extras on the spot with HICAPS and pay the gap. No referral needed to book.</p>
       </div>
       <p class="note center">If you leave unsatisfied, you don't pay. <a href="physio-terms.html">Terms and conditions apply.</a></p>
-      <a class="btn" href="#" data-book style="margin-top:18px">Claim Free 15 Minute Physical Assessment →</a>
     </div>
   </section>
 
@@ -334,7 +346,7 @@
   </div>
 </footer>
 
-<div class="sticky"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment →</a></div>
+<div class="sticky"><a class="btn" href="#offer" data-explore>I’d like to explore my options →</a></div>
 
 <script>
 (function(){
@@ -383,7 +395,7 @@
   var BOOK_URL = (window.FORTIS && window.FORTIS.BOOK_URL) || '#';
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) {
-    links[i].href = BOOK_URL;
+    links[i].href = links[i].getAttribute('data-type') ? BOOK_URL + '?appointment_type_id=' + links[i].getAttribute('data-type') : BOOK_URL;
     // Conversion tracking moved off the click: the Lead event fires on Cliniko's bookings/confirmation page via Google Tag Manager.
   }
   // Video review cards: poster + overlays until tapped, then native controls take over.
@@ -397,7 +409,7 @@
       ov.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     })(vids[k]);
   }
-  var main = document.getElementById('book');
+  var main = document.getElementById('offer');
   if (main && 'IntersectionObserver' in window) {
     new IntersectionObserver(function(e){ document.body.classList.toggle('form-visible', e[0].isIntersecting); }, {threshold: 0.4}).observe(main);
   }
@@ -412,7 +424,7 @@
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) (function(a, idx){
     a.addEventListener('click', function(){
-      var pos = a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
+      var pos = a.closest('#offer') ? 'offer-' + ({'2049035727672452643':'free','1438155794401994239':'initial','1439621968738395746':'followup'}[a.getAttribute('data-type')] || 'other') : a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
       try { fbq('trackCustom', 'ClaimClick', { position: pos, page: location.pathname }); } catch (e) {}
     });
   })(links[i], i);
@@ -423,6 +435,25 @@
     for (var j = 0; j < marks.length; j++) if (pct >= (marks[j] === 100 ? 97 : marks[j])) once('Scroll' + marks[j], { page: location.pathname });
   }
   window.addEventListener('scroll', onScroll, { passive: true }); setTimeout(onScroll, 1500);
+})();
+</script>
+<script>
+/* Explore clicks (the soft CTA): smooth-scroll to the offer, re-align once lazy images above have loaded, log by position. */
+(function(){
+  var target = document.getElementById('offer'); if (!target) return;
+  var ex = document.querySelectorAll('[data-explore]');
+  function go(){
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function(){ if (Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 1300);
+    setTimeout(function(){ if (Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ block: 'start' }); }, 2600);
+  }
+  for (var i = 0; i < ex.length; i++) (function(a, idx){
+    a.addEventListener('click', function(e){
+      e.preventDefault(); go();
+      var pos = a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
+      try { if (window.fbq) fbq('trackCustom', 'ExploreClick', { position: pos, page: location.pathname }); } catch (x) {}
+    });
+  })(ex[i], i);
 })();
 </script>
 </body>

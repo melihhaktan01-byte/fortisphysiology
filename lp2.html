@@ -181,6 +181,23 @@ footer p a { color: var(--muted); }
   .btn { font-size: 1.08rem; padding: 14px 24px; }
   .brand span { font-size: 0.82rem; }
 }
+
+/* Explore-my-options flow */
+html { scroll-behavior: smooth; }
+#offer { scroll-margin-top: 8px; }
+.offer-lead { max-width: 640px; margin: 18px auto 0; text-align: center; color: var(--body); }
+.offer-grid { max-width: 960px; margin: 34px auto 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.ocard { position: relative; background: var(--bg2); border: 1px solid rgba(244,240,232,0.14); border-radius: 14px; padding: 28px 18px 22px; text-align: center; }
+.ocard.pick { border-color: var(--accent); }
+.ocard .tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+.ocard .amt { font-size: 2.4rem; font-weight: 700; color: var(--head); line-height: 1; }
+.ocard .for { color: var(--muted); font-weight: 500; margin-top: 8px; }
+.ocard ul { list-style: none; padding: 0; margin: 18px 0 0; text-align: left; display: grid; gap: 8px; font-size: 0.95rem; }
+.ocard li { padding-left: 24px; position: relative; }
+.ocard li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.ocard .btn { display: block; margin-top: 20px; font-size: 1.02rem; padding: 13px 14px; }
+.offer-note { max-width: 640px; margin: 22px auto 0; text-align: center; color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 760px) { .offer-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -191,7 +208,7 @@ footer p a { color: var(--muted); }
   <p class="eyebrow">Chilling details emerge for Sydney grapplers about the real reason recurring injuries keep you off the mats</p>
   <h1>Australian Sports Physio Discovers Hidden <span class="nw">‘Re-Roll</span> Reinjury Loop’ Keeping Grapplers Sidelined With Chronic Pain</h1>
   <p class="sub">This is why generic physio, taking weeks off, and random mobility drills have failed to get you pain-free, truly resilient, or confidently rolling at comp-level intensity again.</p>
-  <a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a>
+  <a class="btn" href="#offer" data-explore>I’d like to explore my options</a>
   <div class="proofline">
     <span class="pl-item pl-swa"><span class="pl-lbl">Based in</span><span class="swa-lock"><img class="swa" src="assets/lp2-swa.png" alt="SWA"><span class="swa-sub">Sydney Wrestling Academy</span></span></span>
     <span class="pl-dot">·</span>
@@ -226,7 +243,7 @@ footer p a { color: var(--muted); }
         <p>This isn’t magic. It’s just a move that the best grapplers in Sydney already know - stuff regular physios don’t even mention. You’re not sitting out, you’re setting PRs. Sunday open mats? You own them again.</p>
         <p>It sounds wild, but this little-known fix is the reason Lucas Kanard sends his guys here. And it could be yours next.</p>
       </div>
-      <div class="cta"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a></div>
+      <div class="cta"><a class="btn" href="#offer" data-explore>I’d like to explore my options</a></div>
     </div>
   </div>
 </section>
@@ -252,7 +269,7 @@ footer p a { color: var(--muted); }
     <p>It’s not just luck. Over the last three years, Sydney’s best sports clinicians and ADCC veterans have studied a hidden weakness that sits below every re-injury: your body’s broken response to real combat loads. It’s not inflammation. Not weak muscles. It’s how your nerves and tissues adapt - or don’t - to BJJ trauma, round after round.</p>
     <p>You’re about to see the protocol that fixes it - building you up fast, so you can train hard, earn respect, and never hear “just stop” again. This is what top competitors and respected hobbyist dads are doing right now…</p>
   </div>
-  <div class="cta"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a></div>
+  <div class="cta"><a class="btn" href="#offer" data-explore>I’d like to explore my options</a></div>
 </section>
 
 <section class="band1">
@@ -262,7 +279,7 @@ footer p a { color: var(--muted); }
     <p>This isn’t some fancy sports medicine clinic secret - unless you count the guys quietly dominating comps and skipping layoffs. Turns out, when hobbyists train the way pros do (and dodge the generic advice everyone else gets), their bodies learn to handle the grind, heal up faster, and stop getting chewed up in “re-roll” injury loops.</p>
   </div>
   <img class="pic-wide" src="assets/lp-session.jpg" alt="Mid-session treatment in the Fortis clinic" loading="lazy">
-  <div class="cta"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a></div>
+  <div class="cta"><a class="btn" href="#offer" data-explore>I’d like to explore my options</a></div>
 </section>
 
 <section class="band2">
@@ -279,7 +296,7 @@ footer p a { color: var(--muted); }
         <p>Why does generic rest leave some athletes stuck while others bounce back tougher, stronger, and pain-free? Just like two teammates of the same age and rank can have wildly different recoveries, there’s a hidden difference in how their bodies actually adapt to injury, pressure, and mat time.</p>
         <p>The truth is, numbers don’t lie - over 180 Sydney grapplers have used this competition-tested protocol to break the painful rest/re-injury cycle and get back to rolling fast. Instead of just counting days off the mats, this solution measures what really matters: can you perform under pressure, handle competition rounds, and walk into class with zero fear of re-injury? For hundreds of hobbyists, competitors, and dads, the difference has been night and day - energy high, pain low, and the confidence to train like nothing ever happened. That’s why top athletes (and their coaches) swear by it.</p>
       </div>
-      <div class="cta"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a></div>
+      <div class="cta"><a class="btn" href="#offer" data-explore>I’d like to explore my options</a></div>
     </div>
   </div>
 </section>
@@ -330,7 +347,33 @@ footer p a { color: var(--muted); }
     <p>Alright... all you need to do is click below and pick a time that works for you.</p>
     <p>Speak soon.</p>
   </div>
-  <div class="cta"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a></div>
+</section>
+
+<section class="band1" id="offer">
+  <h2 class="center">Pick Where You Want To Start</h2>
+  <p class="offer-lead">No packages, no surprises. Most people begin with the free assessment. After that you pay per appointment, and book a follow up only when your physio says it’s warranted.</p>
+  <div class="offer-grid">
+    <div class="ocard pick">
+      <div class="tag">Most people start here</div>
+      <div class="amt">Free</div>
+      <div class="for">15-Minute Physical Assessment</div>
+      <ul><li>A short in-clinic look at the problem</li><li>A straight answer on what to do next</li><li>No treatment on the day, no obligation</li></ul>
+      <a class="btn" href="#" data-book data-type="2049035727672452643">Book My Free Assessment</a>
+    </div>
+    <div class="ocard">
+      <div class="amt">$180</div>
+      <div class="for">Initial Consultation (New Patients)</div>
+      <ul><li>Assessment and diagnosis of the root cause</li><li>Treatment starts the same day</li><li>A plan plus direct access to your physio</li></ul>
+      <a class="btn" href="#" data-book data-type="1438155794401994239">Book An Initial Consultation</a>
+    </div>
+    <div class="ocard">
+      <div class="amt">$120</div>
+      <div class="for">Follow Up (Existing Patients)</div>
+      <ul><li>Only when your physio says it’s warranted</li><li>Plan reviewed and progressed</li><li>Supervised exercise with the exercise physiologist</li></ul>
+      <a class="btn" href="#" data-book data-type="1439621968738395746">Book A Follow Up</a>
+    </div>
+  </div>
+  <p class="offer-note">Private health fund accepted: claim your extras on the spot with HICAPS and pay the gap. No referral needed.</p>
 </section>
 
 <section class="band2 guar">
@@ -353,7 +396,7 @@ footer p a { color: var(--muted); }
   <div class="track"><article class="rcard vcard"><div class="vid"><video playsinline preload="metadata" poster="assets/lp-review-1.jpg" aria-label="Lucas Kanard, patient review"><source src="assets/lp-review-1.mp4" type="video/mp4"></video><div class="ov" role="button" tabindex="0" aria-label="Play Lucas Kanard's review"><div class="who"><span class="n">Lucas Kanard</span><span class="r">ADCC &amp; CJI veteran</span></div><span class="play">&#9654;</span><div class="say">“Three weeks out from ADCC... it gave me the confidence to compete.”</div></div></div></article><article class="rcard vcard"><div class="vid"><video playsinline preload="metadata" poster="assets/lp-review-2.jpg" aria-label="Abdullah Deif, patient review"><source src="assets/lp-review-2.mp4" type="video/mp4"></video><div class="ov" role="button" tabindex="0" aria-label="Play Abdullah Deif's review"><div class="who"><span class="n">Abdullah Deif</span><span class="r">BJJ competitor</span></div><span class="play">&#9654;</span><div class="say">“They gave me a step-by-step recovery plan... very valuable because I compete a lot.”</div></div></div></article><article class="rcard vcard"><div class="vid"><video playsinline preload="metadata" poster="assets/lp-review-3.jpg" aria-label="Logan, patient review"><source src="assets/lp-review-3.mp4" type="video/mp4"></video><div class="ov" role="button" tabindex="0" aria-label="Play Logan's review"><div class="who"><span class="n">Logan</span><span class="r">Brown belt competitor</span></div><span class="play">&#9654;</span><div class="say">“ATFL rupture from a jiu-jitsu tournament... Saif helped me build a baseline and start to build strength around the area.”</div></div></div></article><article class="rcard vcard"><div class="vid"><video playsinline preload="metadata" poster="assets/lp-review-4.jpg" aria-label="Altin, patient review"><source src="assets/lp-review-4.mp4" type="video/mp4"></video><div class="ov" role="button" tabindex="0" aria-label="Play Altin's review"><div class="who"><span class="n">Altin</span><span class="r">BJJ hobbyist</span></div><span class="play">&#9654;</span><div class="say">“Fractured the bone in my wrist, ruptured about three ligaments... hitting that fourth week, I was back to grappling.”</div></div></div></article><article class="rcard"><div class="stars" aria-label="5 stars">★★★★★</div><h4>Meticulous, Detailed Approach</h4><p class="q">“Amazing clinic, very meticulous, detailed approach taken by the physios treating all clients with care.”</p><p class="who">Abdul <span>· Google review</span></p></article><article class="rcard"><div class="stars" aria-label="5 stars">★★★★★</div><h4>The Gold Standard</h4><p class="q">“Fortis Physiology truly sets the gold standard in recovery and rehabilitation!”</p><p class="who">Jamal <span>· Google review</span></p></article><article class="rcard"><div class="stars" aria-label="5 stars">★★★★★</div><h4>Would 100% Come Back</h4><p class="q">“Amazing set up, physio is super nice, would 100% come back and recommend him to everyone.”</p><p class="who">Yusuf <span>· Google review</span></p></article></div>
   <p class="swipe-hint">Swipe for more &rarr;</p>
   <p class="risk" style="padding:0 20px">Join us risk-free. Our 100% money-back guarantee means if we can’t get you rolling pain-free in 11 days, you get every penny back - no questions asked.</p>
-  <div class="cta"><a class="btn" href="#" data-book>Claim Free 15 Minute Physical Assessment</a></div>
+  <div class="cta"><a class="btn" href="#offer" data-explore>I’d like to explore my options</a></div>
 </section>
 
 <footer>
@@ -376,7 +419,7 @@ footer p a { color: var(--muted); }
   var url = (window.FORTIS && window.FORTIS.BOOK_URL) || '#';
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) {
-    links[i].href = url;
+    links[i].href = links[i].getAttribute('data-type') ? url + '?appointment_type_id=' + links[i].getAttribute('data-type') : url;
     links[i].addEventListener('click', function(){ if (window.fbq) { fbq('track', 'Schedule', { page: 'lp2' }); } });
   }
 })();
@@ -390,7 +433,7 @@ footer p a { color: var(--muted); }
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) (function(a, idx){
     a.addEventListener('click', function(){
-      var pos = a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
+      var pos = a.closest('#offer') ? 'offer-' + ({'2049035727672452643':'free','1438155794401994239':'initial','1439621968738395746':'followup'}[a.getAttribute('data-type')] || 'other') : a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
       try { fbq('trackCustom', 'ClaimClick', { position: pos, page: location.pathname }); } catch (e) {}
     });
   })(links[i], i);
@@ -403,5 +446,26 @@ footer p a { color: var(--muted); }
   window.addEventListener('scroll', onScroll, { passive: true }); setTimeout(onScroll, 1500);
 })();
 </script>
+<script>
+/* Explore clicks (the soft CTA): smooth-scroll to the offer, re-align once lazy images above have loaded, log by position. */
+(function(){
+  var target = document.getElementById('offer'); if (!target) return;
+  var ex = document.querySelectorAll('[data-explore]');
+  function go(){
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function(){ if (Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 1300);
+    setTimeout(function(){ if (Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ block: 'start' }); }, 2600);
+  }
+  for (var i = 0; i < ex.length; i++) (function(a, idx){
+    a.addEventListener('click', function(e){
+      e.preventDefault(); go();
+      var pos = a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
+      try { if (window.fbq) fbq('trackCustom', 'ExploreClick', { position: pos, page: location.pathname }); } catch (x) {}
+    });
+  })(ex[i], i);
+})();
+</script>
 </body>
+</html>
+
 </html>
