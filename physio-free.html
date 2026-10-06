@@ -35,7 +35,22 @@
     CLARITY_ID: 'ypmv5ojvi2',                                 // clarity.microsoft.com > project > Settings > Project ID
     BOOK_URL: 'https://fortis-physiology.au4.cliniko.com/bookings'  // Full Cliniko booking page (all three services + prices visible, Melih's call 28 Sep). Conversion fires inside Cliniko via GTM on bookings/confirmation.
   };
+  /* A/B test (from 7 Oct 2026): A = hero + sticky "I'd like to explore my options" (scrolls to the 3 offer cards),
+     B = hero + sticky "Book my free 15 minute assessment" (deep link to the free slot). 50/50, kept per browser.
+     ?lpv=a or ?lpv=b forces a version for checking. Every Claim/Explore/Scroll event carries `variant`. */
+  (function(){
+    var v = null;
+    try { v = (location.search.match(/[?&]lpv=(a|b)(&|$)/) || [])[1] || localStorage.getItem('fx_lp_v'); } catch (e) {}
+    if (v !== 'a' && v !== 'b') v = Math.random() < 0.5 ? 'a' : 'b';
+    try { localStorage.setItem('fx_lp_v', v); } catch (e) {}
+    window.FORTIS.VARIANT = v;
+    document.documentElement.setAttribute('data-v', v);
+  })();
 </script>
+<style>
+  html[data-v="b"] .v-a { display: none !important; }
+  html:not([data-v="b"]) .v-b { display: none !important; }
+</style>
 <script>
   (function(){
     var c = window.FORTIS;
@@ -45,6 +60,7 @@
     }
     if (c.CLARITY_ID) {
       (function(c2,l,a,r,i,t,y){c2[a]=c2[a]||function(){(c2[a].q=c2[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",c.CLARITY_ID);
+      try { clarity('set', 'lp_variant', c.VARIANT); } catch (e) {}
     }
   })();
 </script>
@@ -86,9 +102,12 @@
 
   <!-- 3. Next step -->
   <div class="wrap center" id="book">
-    <p class="cta-line"><u>Next step:</u> see your options.</p>
-    <a class="btn big" href="#offer" data-explore>I’d like to explore my options →</a>
-    <p class="note center" style="margin-top:12px">No obligation. Nothing to pay to find out where you stand.</p>
+    <p class="cta-line v-a"><u>Next step:</u> see your options.</p>
+    <a class="btn big v-a" href="#offer" data-explore>I’d like to explore my options →</a>
+    <p class="note center v-a" style="margin-top:12px">No obligation. Nothing to pay to find out where you stand.</p>
+    <p class="cta-line v-b"><u>Next step:</u> book your free 15 minute physical assessment.</p>
+    <a class="btn big v-b" href="#" data-book data-type="2049035727672452643">Book my free 15 minute assessment →</a>
+    <p class="note center v-b" style="margin-top:12px">No obligation. Nothing to pay to find out where you stand. New patients, one per person.</p>
   </div>
 
   <!-- 4. Reviews -->
@@ -346,7 +365,7 @@
   </div>
 </footer>
 
-<div class="sticky"><a class="btn" href="#offer" data-explore>I’d like to explore my options →</a></div>
+<div class="sticky"><a class="btn v-a" href="#offer" data-explore>I’d like to explore my options →</a><a class="btn v-b" href="#" data-book data-type="2049035727672452643">Book my free 15 minute assessment →</a></div>
 
 <script>
 (function(){
@@ -420,12 +439,13 @@
 (function(){
   if (!window.fbq) return;
   var fired = {};
-  function once(name, data){ if (fired[name]) return; fired[name] = 1; try { fbq('trackCustom', name, data || {}); } catch (e) {} }
+  function once(name, data){ if (fired[name]) return; fired[name] = 1; data = data || {}; data.variant = window.FORTIS.VARIANT; try { fbq('trackCustom', name, data); } catch (e) {} }
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) (function(a, idx){
     a.addEventListener('click', function(){
       var pos = a.closest('#offer') ? 'offer-' + ({'2049035727672452643':'free','1438155794401994239':'initial','1439621968738395746':'followup'}[a.getAttribute('data-type')] || 'other') : a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
-      try { fbq('trackCustom', 'ClaimClick', { position: pos, page: location.pathname }); } catch (e) {}
+      try { fbq('trackCustom', 'ClaimClick', { position: pos, page: location.pathname, variant: window.FORTIS.VARIANT }); } catch (e) {}
+      try { clarity('event', 'claim_click'); clarity('event', 'claim_' + pos); } catch (e) {}
     });
   })(links[i], i);
   var marks = [25, 50, 75, 100];
@@ -451,7 +471,8 @@
     a.addEventListener('click', function(e){
       e.preventDefault(); go();
       var pos = a.closest('.sticky') ? 'sticky' : (a.closest('#book') ? 'hero' : (a.classList.contains('pill') ? 'nav' : 'section-' + idx));
-      try { if (window.fbq) fbq('trackCustom', 'ExploreClick', { position: pos, page: location.pathname }); } catch (x) {}
+      try { if (window.fbq) fbq('trackCustom', 'ExploreClick', { position: pos, page: location.pathname, variant: window.FORTIS.VARIANT }); } catch (x) {}
+      try { clarity('event', 'explore_click'); } catch (x) {}
     });
   })(ex[i], i);
 })();
