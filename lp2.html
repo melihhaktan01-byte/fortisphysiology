@@ -22,7 +22,7 @@
   window.FORTIS = {
     PIXEL_ID: '28395750283418345',
     CLARITY_ID: 'ypmv5ojvi2',
-    BOOK_URL: 'https://fortis-physiology.au4.cliniko.com/bookings'  // deep link: Free 15-min Physical Assessment
+    BOOK_URL: 'https://fortis-physiology.au4.cliniko.com/bookings?practitioner_id=2049031757855990907'  // deep link: Free 15-min Physical Assessment
   };
 </script>
 <script>
@@ -419,7 +419,7 @@ html { scroll-behavior: smooth; }
   var url = (window.FORTIS && window.FORTIS.BOOK_URL) || '#';
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) {
-    links[i].href = links[i].getAttribute('data-type') ? url + '?appointment_type_id=' + links[i].getAttribute('data-type') : url;
+    links[i].href = links[i].getAttribute('data-type') ? url + '&appointment_type_id=' + links[i].getAttribute('data-type') : url;
     links[i].addEventListener('click', function(){ if (window.fbq) { fbq('track', 'Schedule', { page: 'lp2' }); } });
   }
 })();
