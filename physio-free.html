@@ -459,7 +459,9 @@
   var BOOK_URL = (window.FORTIS && window.FORTIS.BOOK_URL) || '#';
   var links = document.querySelectorAll('[data-book]');
   for (var i = 0; i < links.length; i++) {
-    links[i].href = links[i].getAttribute('data-type') ? BOOK_URL + '&appointment_type_id=' + links[i].getAttribute('data-type') : BOOK_URL;
+    // Carry the page version and the ad into Cliniko's URL so bookings can be split by both (Cliniko keeps the query string through its steps).
+    var trk = '&lpv=' + (window.FORTIS.VARIANT || 'x') + '&ad=' + encodeURIComponent((location.search.match(/[?&]utm_content=([^&]*)/) || [,''])[1] || 'none');
+    links[i].href = (links[i].getAttribute('data-type') ? BOOK_URL + '&appointment_type_id=' + links[i].getAttribute('data-type') : BOOK_URL) + trk;
     // Conversion tracking moved off the click: the Lead event fires on Cliniko's bookings/confirmation page via Google Tag Manager.
   }
   // Video review cards: poster + overlays until tapped, then native controls take over.
