@@ -445,7 +445,7 @@
     .then(function(){
       vf.querySelectorAll('input,button').forEach(function(x){ x.disabled = true; });
       btn.textContent = 'Voucher claimed';
-      vm.textContent = 'Done. Your $49 voucher is on file for 30 days. Book your time below.';
+      vm.textContent = 'Done. Your $49 voucher is linked to your name and gets applied automatically when you book. Valid 30 days.';
       vm.className = 'optin-msg ok';
       if (vb) vb.style.display = 'block';
       try { if (window.fbq) { fbq('trackCustom', 'VoucherClaim', { page: 'physio-check' }); fbq('track', 'CompleteRegistration', { content_name: 'voucher-49' }); } } catch (x) {}
