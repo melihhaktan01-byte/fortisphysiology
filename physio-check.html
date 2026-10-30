@@ -27,6 +27,7 @@
   .pricebox .tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
   .pricebox .amt small { font-size: 1rem; font-weight: 700; letter-spacing: 0; color: var(--muted); display: block; margin-top: 6px; }
   .refund { font-weight: 800; }
+  .prices { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
   .hero .btn { margin-top: 26px; }
   .steps.plain .step { text-align: left; display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; padding: 20px 0; }
   .steps.plain .n { width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; }
@@ -76,20 +77,22 @@
     <div class="wrap hero center">
       <p class="eyebrow">The $49 Grappler Injury Check</p>
       <h1>Injured from BJJ or wrestling? Get it looked at by a physio who trains at Sydney Wrestling Academy.</h1>
-      <p class="sub">15 minutes at 10 Raglan Road, Auburn. It's $49, and it comes off your full initial consult if you book it within 7 days.</p>
-      <a class="btn big" href="#" data-book data-type="2070711598778951264">Book my $49 injury check →</a>
-      <p class="note center refund">Leave without your written plan and we refund your $49.</p>
-      <p class="note center">New patients, one per person. No referral needed. Rather talk first? Call or text <a href="tel:+61424309389">0424 309 389</a>.</p>
     </div>
   </div>
 
-  <!-- 2. Watch first -->
+  <!-- 2. Video, then the offer line and the button -->
   <div class="wrap">
     <div class="watch">
-      <div class="bar">Watch first, 60 seconds</div>
       <div class="frame">
         <video controls playsinline muted autoplay loop preload="metadata" poster="assets/lp-vsl-poster.jpg"><source src="assets/lp-vsl.mp4" type="video/mp4"></video>
       </div>
+    </div>
+    <div class="hero center" style="padding-top:22px">
+      <p class="sub">15 minutes at 10 Raglan Road, Auburn. It's $49, and it comes off your full initial consult if you book it within 7 days.</p>
+      <a class="btn big" href="#" data-book data-type="2070711598778951264">Book my $49 injury check →</a>
+      <p class="note center refund">Leave without your written plan and we refund your $49.</p>
+      <p class="note center">New patients, one per person. No referral needed.</p>
+      <p class="lead" style="margin-top:26px">Most grapplers get told to rest it, so they sit out, it feels better, and the first night back it goes again. Rest is what you get told when no one has checked what's wrong.</p>
     </div>
   </div>
 
@@ -112,8 +115,7 @@
   <section id="offer">
     <div class="wrap">
       <p class="label">What it costs</p>
-      <h2>No packages, no surprises</h2>
-      <p class="lead">The check is $49 for 15 minutes. The full initial consult is $140 for 60 minutes, and if you book it within 7 days of your check the $49 comes off, so you pay $91. Follow ups are $120 for 45 minutes. With a private health fund there's HICAPS on the spot for the initial and treatment, but not for the $49 check.</p>
+      <h2>$49, and it comes off your initial</h2>
       <div class="prices">
         <div class="pricebox pick">
           <div class="tag">Start here</div>
@@ -124,23 +126,10 @@
             <li>A straight answer on what's going on</li>
             <li>Your written plan for this week's training</li>
           </ul>
-          <a class="btn" href="#" data-book data-type="2070711598778951264">Book my $49 check →</a>
-        </div>
-        <div class="pricebox">
-          <div class="amt">$140<small>$91 within 7 days of your check</small></div>
-          <div class="for">Initial consult, 60 minutes (new patients)</div>
-          <ul class="ticks">
-            <li>Full movement and strength work-up</li>
-            <li>Treatment starts the same day where it's warranted</li>
-            <li>Your plan, plus your physio's direct contact</li>
-          </ul>
-          <a class="btn" href="#" data-book data-type="1438155794401994239">Book initial →</a>
+          <a class="btn" href="#" data-book data-type="2070711598778951264">Book my $49 injury check →</a>
         </div>
       </div>
-      <div class="funding">
-        <strong>Private health fund accepted</strong>
-        <p>Claim your extras on the initial and treatment with HICAPS on the spot and pay the gap. Follow ups are $120.</p>
-      </div>
+      <p class="note center" style="margin-top:14px">If you book the full initial ($140, 60 minutes) within 7 days, the $49 comes off, so you pay $91. HICAPS on the spot for the initial and treatment.</p>
     </div>
   </section>
 
@@ -149,7 +138,7 @@
     <div class="wrap center">
       <p class="label">Our promise on the fee</p>
       <h2 class="huge">Leave without your written plan <span class="hl">and we refund your $49.</span></h2>
-      <p class="tc"><a href="physio-terms.html">Terms and conditions apply.</a></p>
+      <p class="tc">This covers the $49 check fee. New patients, one per person.</p>
     </div>
   </section>
 
@@ -158,7 +147,6 @@
     <div class="wrap">
       <p class="label">Who it's for</p>
       <h2>Grapplers training around an injury</h2>
-      <p class="lead">Grapplers with an injury they keep training around, or one that has stopped them training. New patients, one per person, no referral needed.</p>
       <div class="notfor">It isn't for emergencies. If you've had a head knock and feel lightheaded, or can't put weight on a leg, go to the hospital and get yourself checked. We don't see NDIS clients, and there's no telehealth, it's in person only.</div>
     </div>
   </section>
