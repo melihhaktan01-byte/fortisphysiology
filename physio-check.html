@@ -21,8 +21,9 @@
 <script>
   window.FORTIS = {
     PIXEL_ID: '28395750283418345',
+    PIXEL_ID_ADS: '2506941369790973',
     CLARITY_ID: 'ypmv5ojvi2',
-    BOOK_URL: 'https://fortis-physiology.au4.cliniko.com/bookings?practitioner_id=2049031757855990907'  // deep link: the $49 November first-visit type (2074295574202427114)nt
+    BOOK_URL: 'https://fortis-physiology.au4.cliniko.com/bookings?practitioner_id=2049031757855990907'  // deep link: the $49 November first-visit type (2074295574202427114)
   };
 </script>
 <script>
@@ -30,7 +31,7 @@
     var c = window.FORTIS;
     if (c.PIXEL_ID) {
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', c.PIXEL_ID); fbq('track', 'PageView');
+      fbq('init', c.PIXEL_ID); if (c.PIXEL_ID_ADS) fbq('init', c.PIXEL_ID_ADS); fbq('track', 'PageView');
     }
     if (c.CLARITY_ID) {
       (function(c2,l,a,r,i,t,y){c2[a]=c2[a]||function(){(c2[a].q=c2[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",c.CLARITY_ID);
