@@ -198,10 +198,14 @@
     var trk = '&lpv=paid&ad=' + encodeURIComponent((location.search.match(/[?&]utm_content=([^&]*)/) || [,''])[1] || 'none');
     links[i].href = (links[i].getAttribute('data-type') ? BOOK_URL + '&appointment_type_id=' + links[i].getAttribute('data-type') : BOOK_URL) + trk;
   }
-  // Hide the sticky bar while the offer section is on screen
-  var sticky = document.querySelector('.sticky'), offer = document.getElementById('offer');
-  if (sticky && offer && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function(es){ sticky.style.display = es[0].isIntersecting ? 'none' : ''; }, { threshold: 0.2 }).observe(offer);
+  // Sticky bar: hidden until the hero button has scrolled off screen, and hidden again while the price section is on screen
+  var sticky = document.querySelector('.sticky'), offer = document.getElementById('offer'), heroBtn = document.querySelector('#book .btn.big');
+  if (sticky && 'IntersectionObserver' in window) {
+    var heroOff = false, offerOn = false;
+    function paint(){ sticky.style.display = (heroOff && !offerOn) ? '' : 'none'; }
+    sticky.style.display = 'none';
+    if (heroBtn) new IntersectionObserver(function(es){ heroOff = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; paint(); }, { threshold: 0 }).observe(heroBtn);
+    if (offer) new IntersectionObserver(function(es){ offerOn = es[0].isIntersecting; paint(); }, { threshold: 0.2 }).observe(offer);
   }
 })();
 </script>
