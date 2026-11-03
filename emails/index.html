@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>30 days of grappling injury emails | Fortis Physiology</title>
+<meta name="description" content="One email a day for 30 days from the physio clinic inside Sydney Wrestling Academy. What to do with a rib, a neck, a knee you can't trust, how to tell if you came back too early. Free.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../lp.css?v=12">
+<style>
+  .sq { max-width: 560px; margin: 0 auto; padding: 28px 18px 60px; }
+  .sq h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); line-height: 1.15; font-weight: 800; margin: 18px 0 14px; letter-spacing: -0.01em; }
+  .sq p { font-size: 1.05rem; line-height: 1.5; margin: 0 0 14px; }
+  .sq .muted { color: var(--muted); font-size: 0.95rem; }
+  .optin { margin-top: 22px; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; }
+  .optin label.field, .optin span.field { display: block; font-size: 0.86rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 12px 0 6px; }
+  .optin input[type=text], .optin input[type=email] { width: 100%; font: inherit; font-size: 1.05rem; padding: 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+  .optin .doors { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-bottom: 14px; }
+  .optin .doors label { font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .optin .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .optin .btn { margin-top: 10px; }
+  .optin-msg { min-height: 1.4em; margin: 10px 0 0; font-size: 0.98rem; }
+  .optin-msg.ok { color: #9fd3a1; } .optin-msg.err { color: #f0a08a; }
+  .meta { font-size: 0.86rem; color: var(--muted); margin-top: 12px; }
+  .meta a { color: inherit; }
+  footer { text-align: center; color: var(--muted); font-size: 0.86rem; padding: 10px 18px 40px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main class="sq">
+  <div class="top"><a class="brand" href="/" style="text-decoration:none"><span>Fortis Physiology</span></a><span class="pill" style="cursor:default">Inside SWA</span></div>
+
+  <h1>Training around an injury? I'll help you deal with it over the next 30 days, for free.</h1>
+
+  <p>One email a day for 30 days from the physio clinic inside Sydney Wrestling Academy. What to do with a rib, a neck, a knee you can't trust, how to tell if you came back too early, how to roll when nobody rolls light. Each one is something you can use at training that night.</p>
+
+  <p class="muted">If you don't like what turns up, unsubscribe any time.</p>
+
+  <form class="optin" id="optin-form" novalidate>
+    <label class="field" for="op-fn">First name</label>
+    <input type="text" id="op-fn" name="first_name" autocomplete="given-name" required>
+    <label class="field" for="op-em">Best email</label>
+    <input type="email" id="op-em" name="email" autocomplete="email" inputmode="email" required>
+    <span class="field">Who trains?</span>
+    <div class="doors">
+      <label><input type="radio" name="door" value="adult" checked> I train</label>
+      <label><input type="radio" name="door" value="parent"> My kid trains</label>
+      <label><input type="radio" name="door" value="both"> Both</label>
+    </div>
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn big" type="submit">Send me the first one →</button>
+    <p class="optin-msg" id="optin-msg" role="status" aria-live="polite"></p>
+    <p class="meta">The first email comes straight away. General information only, not individual health advice. <a href="../physio-privacy.html">Privacy</a></p>
+  </form>
+</main>
+<footer>© 2026 Fortis Physiology · 10 Raglan Road, Auburn NSW 2144 · <a href="mailto:contact@fortisphysiology.com">contact@fortisphysiology.com</a></footer>
+<script>
+(function(){
+  var OPTIN_URL = 'https://contact-4483--fortis-optin-api.modal.run/subscribe';
+  var OPTIN_TOKEN = '04bce824a9605fe12509110fdc40df681de7cb560591030a';
+  var t0 = Date.now();
+  var of = document.getElementById('optin-form'), om = document.getElementById('optin-msg');
+  of.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fn = of.first_name.value.trim(), em = of.email.value.trim();
+    if (!fn || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { om.textContent = 'Add your first name and a valid email.'; om.className = 'optin-msg err'; return; }
+    var btn = of.querySelector('button'); btn.disabled = true; btn.textContent = 'Sending...';
+    var src = 'emails'; try { var q = new URLSearchParams(location.search); var u = q.get('utm_source') || q.get('s'); if (u) src += ':' + u; } catch (x) {}
+    fetch(OPTIN_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + OPTIN_TOKEN },
+      body: JSON.stringify({ first_name: fn, email: em, door: of.door.value, website: of.website.value, source: src, elapsed: (Date.now() - t0) / 1000 }) })
+    .then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+    .then(function(){ of.querySelectorAll('input,button').forEach(function(x){ x.disabled = true; }); btn.textContent = "You're in"; om.textContent = 'Done. The first one is on its way. Check Promotions or Spam if it is not there in a few minutes.'; om.className = 'optin-msg ok'; })
+    .catch(function(){ btn.disabled = false; btn.textContent = 'Send me the first one →'; om.textContent = 'That did not go through. Email contact@fortisphysiology.com with the word "emails" and we will add you.'; om.className = 'optin-msg err'; });
+  });
+})();
+</script>
+</body>
+</html>
