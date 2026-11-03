@@ -198,14 +198,14 @@ html { scroll-behavior: smooth; }
 .ocard li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 .ocard .btn { display: block; margin-top: 20px; font-size: 1.02rem; padding: 13px 14px; }
 .offer-note { max-width: 640px; margin: 22px auto 0; text-align: center; color: var(--muted); font-size: 0.92rem; }
-@media (max-width: 760px) { .offer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .offer-grid { grid-template-columns: 1fr; } .ocard.pick { order: -1; } }
 .vsl { max-width: 860px; margin: 26px auto 0; }
 .vsl .bar { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; padding: 10px; background: rgba(0,0,0,0.25); border-radius: 14px 14px 0 0; }
 .vsl .frame { background: #000; border-radius: 0 0 14px 14px; overflow: hidden; aspect-ratio: 16 / 9; }
 .vsl video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .terms { text-align: center; font-size: 0.9rem; opacity: 0.85; margin-top: 10px; }
-.offer-grid { justify-content: center; max-width: 720px; margin-left: auto; margin-right: auto; }
-@media (min-width: 761px) { .offer-grid { grid-template-columns: 1fr 1fr; } }
+.offer-grid { justify-content: center; max-width: 960px; margin-left: auto; margin-right: auto; }
+@media (min-width: 761px) { .offer-grid { grid-template-columns: 1fr 1fr 1fr; } }
 .outline ol { margin-left: auto; margin-right: auto; }
 .sticky49 { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(19,21,24,0.94); border-top: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); display: none; }
 .sticky49 .btn { display: block; width: 100%; max-width: 560px; margin: 0 auto; text-align: center; }
