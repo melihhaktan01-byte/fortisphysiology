@@ -528,14 +528,15 @@ footer {
 .bg-photo { position: relative; isolation: isolate; overflow: hidden; }
 .bg-photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; filter: grayscale(1); }
 .bg-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; }
-.bg-team { padding-top: clamp(300px, 36vw, 480px); }
-.bg-team::before { background-image: url("assets/lp-team.jpg"); background-position: center 6%; opacity: 0.6; }
-.bg-team::after { background: linear-gradient(rgba(19,21,24,0.05) 0%, rgba(19,21,24,0.35) 38%, rgba(19,21,24,0.9) 62%); }
-.bg-team .team-grid { background: transparent; max-width: 900px; margin: 0 auto; }
-.bg-team .team-card { background: rgba(19,21,24,0.72); padding: clamp(22px, 2.4vw, 32px) clamp(18px, 2.4vw, 32px); }
-.bg-team .sec-head { position: absolute; left: 0; right: 0; top: clamp(28px, 3vw, 44px); margin: 0; text-align: center; }
-.bg-team .sec-head .label { display: inline-block; font-variation-settings: "wdth" 118; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; font-size: clamp(32px, 4.2vw, 66px); color: var(--oxide); text-shadow: 0 2px 14px rgba(0,0,0,0.35); }
-@media (max-width: 760px) { .bg-team { padding-top: 92vw; } .bg-team .sec-head { top: 2.5vw; } .bg-team .sec-head .label { font-size: 8vw; } .bg-team::before { background-size: 100% auto; background-repeat: no-repeat; background-position: center 11vw; } }
+/* hero: team photo faint behind the headline (Melih 9 Nov) */
+.bg-hero::before { background-image: url("assets/lp-team.jpg"); background-position: center 14%; opacity: 0.34; }
+.bg-hero::after { background: linear-gradient(rgba(234,229,218,0.42) 0%, rgba(234,229,218,0.70) 45%, rgba(234,229,218,0.96) 100%); }
+/* services: hands-on photo faint behind the two discipline cards */
+.bg-services::before { background-image: url("assets/lp-handson.jpg"); background-position: center 38%; opacity: 0.38; }
+.bg-services::after { background: linear-gradient(rgba(19,21,24,0.72) 0%, rgba(19,21,24,0.90) 100%); }
+.bg-services .team-grid { background: transparent; max-width: 900px; margin: 0 auto; }
+.bg-services .team-card { background: rgba(19,21,24,0.62); }
+@media (max-width: 760px) { .bg-hero::before { background-position: center 10%; opacity: 0.30; } }
 .bg-treat::before { background-image: url("assets/lp-handson.jpg"); opacity: 0.16; }
 .bg-room::before { background-image: url("assets/clinic-room.jpg"); opacity: 0.13; }
 @media (max-width: 760px) {
