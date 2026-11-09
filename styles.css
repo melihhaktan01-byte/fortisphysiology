@@ -528,15 +528,18 @@ footer {
 .bg-photo { position: relative; isolation: isolate; overflow: hidden; }
 .bg-photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; filter: grayscale(1); }
 .bg-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; }
-/* hero: team photo faint behind the headline (Melih 9 Nov) */
-.bg-hero::before { background-image: url("assets/lp-team.jpg"); background-position: center 14%; opacity: 0.34; }
-.bg-hero::after { background: linear-gradient(rgba(234,229,218,0.42) 0%, rgba(234,229,218,0.70) 45%, rgba(234,229,218,0.96) 100%); }
-/* services: hands-on photo faint behind the two discipline cards */
-.bg-services::before { background-image: url("assets/lp-handson.jpg"); background-position: center 38%; opacity: 0.38; }
-.bg-services::after { background: linear-gradient(rgba(19,21,24,0.72) 0%, rgba(19,21,24,0.90) 100%); }
-.bg-services .team-grid { background: transparent; max-width: 900px; margin: 0 auto; }
-.bg-services .team-card { background: rgba(19,21,24,0.62); }
-@media (max-width: 760px) { .bg-hero::before { background-position: center 10%; opacity: 0.30; } }
+/* hero: clinic session photo faint behind the headline (Melih 9 Nov) */
+.bg-hero::before { background-image: url("assets/lp-session.jpg"); background-position: center 40%; opacity: 0.30; }
+.bg-hero::after { background: linear-gradient(rgba(234,229,218,0.45) 0%, rgba(234,229,218,0.72) 50%, rgba(234,229,218,0.97) 100%); }
+@media (max-width: 760px) { .bg-hero::before { background-position: 62% 40%; opacity: 0.26; } }
+.bg-team { padding-top: clamp(300px, 36vw, 480px); }
+.bg-team::before { background-image: url("assets/lp-team.jpg"); background-position: center 6%; opacity: 0.6; }
+.bg-team::after { background: linear-gradient(rgba(19,21,24,0.05) 0%, rgba(19,21,24,0.35) 38%, rgba(19,21,24,0.9) 62%); }
+.bg-team .team-grid { background: transparent; max-width: 900px; margin: 0 auto; }
+.bg-team .team-card { background: rgba(19,21,24,0.72); padding: clamp(22px, 2.4vw, 32px) clamp(18px, 2.4vw, 32px); }
+.bg-team .sec-head { position: absolute; left: 0; right: 0; top: clamp(28px, 3vw, 44px); margin: 0; text-align: center; }
+.bg-team .sec-head .label { display: inline-block; font-variation-settings: "wdth" 118; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1; font-size: clamp(32px, 4.2vw, 66px); color: var(--oxide); text-shadow: 0 2px 14px rgba(0,0,0,0.35); }
+@media (max-width: 760px) { .bg-team { padding-top: 92vw; } .bg-team .sec-head { top: 2.5vw; } .bg-team .sec-head .label { font-size: 8vw; } .bg-team::before { background-size: 100% auto; background-repeat: no-repeat; background-position: center 11vw; } }
 .bg-treat::before { background-image: url("assets/lp-handson.jpg"); opacity: 0.16; }
 .bg-room::before { background-image: url("assets/clinic-room.jpg"); opacity: 0.13; }
 @media (max-width: 760px) {
@@ -586,4 +589,20 @@ footer {
   .lp-radio-row { grid-template-columns: repeat(2, 1fr); }
   .lp-fees { grid-template-columns: 1fr; gap: 12px; }
   .lp-hero h1 { max-width: none; }
+}
+
+/* mobile hero: one-line eyebrow, two-line headline, chips two per row, Book button in the first fold (Melih 9 Nov) */
+@media (max-width: 760px) {
+  .hero { padding: 30px 0 34px; }
+  .hero .eyebrow { font-size: 0.74rem; letter-spacing: 0.06em; margin-bottom: 12px; }
+  .hero h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); line-height: 1.04; }
+  .hero-sub { font-size: 0.93rem; margin-top: 14px; max-width: 36ch; }
+  .chips { gap: 7px; margin-top: 18px; }
+  .chips a { font-size: 0.66rem; letter-spacing: 0.06em; padding: 8px 11px; }
+  .hero-cta { margin-top: 20px; gap: 10px; width: 100%; }
+  .hero-cta .btn { flex: 1 1 100%; text-align: center; }
+  .hero-loc { margin-top: 20px; font-size: 0.95rem; }
+  .hero-loc a { white-space: nowrap; }
+  .hero-appt { margin-top: 6px; }
+  .hero-urgent { font-size: 0.84rem; line-height: 1.45; }
 }
